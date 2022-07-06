@@ -1,5 +1,9 @@
 package bird;
 public class Parrot extends AbstractBird implements BirdInterface{
+    public Parrot(String name) {
+        super(name);
+    }
+
     @Override
     public String getType() {
         return null;

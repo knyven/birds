@@ -1,6 +1,17 @@
 package bird;
 
 public class AbstractBird implements BirdInterface{
+
+    private String name;
+
+    public AbstractBird(String name) {
+        this.name = name;
+    }
+
+    private boolean mammal;
+    private int wings;
+
+    private
     @Override
     public String getType() {
         return null;
