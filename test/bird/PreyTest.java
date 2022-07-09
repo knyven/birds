@@ -6,23 +6,8 @@ public class PreyTest {
 
     @Test
     public void testToString() {
-    Bird a = new PreyBird("Hawk", false, 2, "smallMammals");
+    Bird a = new PreyBird("Hawk", false, 2, food.add("smallMammals"));
     a.toString();
     }
 
-    @Test
-    public void getChar() {
-    }
-
-    @Test
-    public void getWings() {
-    }
-
-    @Test
-    public void boolExtinct() {
-    }
-
-    @Test
-    public void getFood() {
-    }
 }
