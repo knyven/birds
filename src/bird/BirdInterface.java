@@ -6,7 +6,7 @@ public interface BirdInterface {
     String getChar();
     int getWings();
     boolean boolExtinct();
-    ArrayList<food> getFood();
+    ArrayList<String> getFood();
 
 
 }

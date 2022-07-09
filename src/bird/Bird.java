@@ -8,19 +8,22 @@ public class Bird implements BirdInterface {
     private String salientChar;
     private boolean isExtinct;
     private int wingNum;
-    private ArrayList<food> favFood;
+    public ArrayList<String> favFood = new ArrayList<>();
 
 
-    public Bird(String type, String salientChar, boolean isExtinct, int wingNum, ArrayList<food> favFood) {
+    public Bird(String type, String salientChar, boolean isExtinct, int wingNum, String item1){
         if(wingNum <= 0 )
         {
             throw new IllegalArgumentException();
         }
+
+
         this.type = type;
         this.salientChar = salientChar;
         this.isExtinct = isExtinct;
         this.wingNum = wingNum;
-        this.favFood = favFood;
+        favFood.add(item1);
+
     }
 
 
@@ -45,8 +48,8 @@ public class Bird implements BirdInterface {
     }
 
     @Override
-    public ArrayList<food> getFood() {
-        return this.favFood;
+    public ArrayList<String> getFood() {
+        return favFood;
     }
 
 

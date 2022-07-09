@@ -6,7 +6,7 @@ public class PreyTest {
 
     @Test
     public void testToString() {
-    Bird a = new PreyBird("Hawk", false, 2, food.add("smallMammals"));
+    Bird a = new PreyBird("Hawk", false, 2, "berries";
     a.toString();
     }
 
