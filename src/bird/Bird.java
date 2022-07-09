@@ -23,6 +23,7 @@ public class Bird implements BirdInterface {
         this.favFood = favFood;
     }
 
+
     @Override
     public String getType(){
         return this.type;
@@ -49,4 +50,14 @@ public class Bird implements BirdInterface {
     }
 
 
+    @Override
+    public String toString() {
+        return "Bird{" +
+                "type='" + this.type + '\'' +
+                ", salientChar='" + this.salientChar + '\'' +
+                ", isExtinct=" + this.isExtinct +
+                ", wingNum=" + this.wingNum +
+                ", favFood=" + this.favFood +
+                '}';
+    }
 }

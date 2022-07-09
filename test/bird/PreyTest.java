@@ -2,13 +2,12 @@ package bird;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class BirdTest {
+public class PreyTest {
 
     @Test
-    public void getType() {
+    public void testToString() {
     Bird a = new PreyBird("Hawk", false, 2, "smallMammals");
+    a.toString();
     }
 
     @Test
