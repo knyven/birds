@@ -9,13 +9,13 @@ public class Parrot extends Bird {
 
 
     public Parrot(String type, String salientChar, boolean isExtinct, int wingNum, ArrayList<food> favFood) {
-        super(type, "Inteligence and ability to mimic sounds", isExtinct, wingNum, favFood);
+        super(type, "Intelligence and ability to mimic sounds", isExtinct, wingNum, favFood);
         this.favWord = null;
         this.numFavWords = 0;
     }
 
     public Parrot(String type, String salientChar, boolean isExtinct, int wingNum, ArrayList<food> favFood, String favWord, int numFavWords) {
-        super(type, "Inteligence and ability to mimic sounds", isExtinct, wingNum, favFood);
+        super(type, "Intelligence and ability to mimic sounds", isExtinct, wingNum, favFood);
         this.favWord = null;
         this.numFavWords = 0;
     }

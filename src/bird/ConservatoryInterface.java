@@ -6,8 +6,9 @@ public interface ConservatoryInterface {
     String calculateFood();
     String printMap();
     String printIndex();
-
     String printSign();
+    int guestLookUp(Bird bird);
+
 
 
 
