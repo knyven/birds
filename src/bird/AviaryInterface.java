@@ -3,6 +3,9 @@ package bird;
 import java.util.ArrayList;
 
 public interface AviaryInterface {
-    ArrayList<>
+    String getBird();
+    boolean addBird(Bird Object);
+    boolean compatible(Bird Object);
+    String printAviary();
 
 }

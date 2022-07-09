@@ -7,6 +7,6 @@ public interface ConservatoryInterface {
     String getAviary();
     String getBird();
     String printMap();
-    String printIndex()
+    String printIndex();
 
 }
