@@ -8,7 +8,7 @@ public class BirdTest {
 
     @Test
     public void getType() {
-    Bird a = new
+    Bird a = new PreyBird("Hawk", false, 2, "smallMammals");
     }
 
     @Test
