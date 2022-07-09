@@ -1,19 +1,23 @@
 package bird;
 
+import java.util.ArrayList;
+
 public class Bird implements BirdInterface {
 
     private String type;
+    private String salientChar;
     private boolean isExtinct;
     private int wingNum;
-    private String favFood;
+    private ArrayList<food> favFood;
 
 
-    public Bird(String type, boolean isExtinct, int wingNum, String favFood) {
+    public Bird(String type, String salientChar, boolean isExtinct, int wingNum, ArrayList<food> favFood) {
         if(wingNum <= 0 )
         {
             throw new IllegalArgumentException();
         }
         this.type = type;
+        this.salientChar = salientChar;
         this.isExtinct = isExtinct;
         this.wingNum = wingNum;
         this.favFood = favFood;
@@ -22,6 +26,11 @@ public class Bird implements BirdInterface {
     @Override
     public String getType(){
         return this.type;
+    }
+
+    @Override
+    public String getChar() {
+        return this.salientChar;
     }
 
     @Override
@@ -35,7 +44,9 @@ public class Bird implements BirdInterface {
     }
 
     @Override
-    public String getFood() {
-        return null;
+    public ArrayList<food> getFood() {
+        return this.favFood;
     }
+
+
 }

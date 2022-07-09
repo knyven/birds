@@ -1,9 +1,12 @@
 package bird;
 
-public interface BirdInterface {
+import java.util.ArrayList;
 
+public interface BirdInterface {
+    String getType();
+    String getChar();
     int getWings();
     boolean boolExtinct();
-    String getFood();
+    ArrayList<food> getFood();
 
 }

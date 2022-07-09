@@ -2,7 +2,7 @@ package bird;
 
 public interface ConservatoryInterface {
 
-    void assignBird(Bird other);
+    void assignBird(Bird object);
     String calculateFood();
     String getAviary();
     String getBird();

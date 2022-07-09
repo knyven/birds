@@ -1,16 +1,17 @@
 package bird;
 
+import java.util.ArrayList;
+
 public class WaterBird extends Bird{
     private String waterType;
-    private String name;
 
 
-    public WaterBird(String type, boolean isExtinct, int wingNum, String favFood, String waterType) {
+    public WaterBird(String type, boolean isExtinct, int wingNum, ArrayList<food> favFood, String waterType) {
         super(type, isExtinct, wingNum, favFood);
         this.waterType = waterType;
     }
 
-    public WaterBird(String type, boolean isExtinct, int wingNum, String favFood, String name, String waterType) {
+    public WaterBird(String type, boolean isExtinct, int wingNum, ArrayList<food> favFood, String name, String waterType) {
         super(type, isExtinct, wingNum, favFood);
         this.waterType = waterType;
         this.name = name;
@@ -28,7 +29,4 @@ public class WaterBird extends Bird{
         this.waterType = waterType;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

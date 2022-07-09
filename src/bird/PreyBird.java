@@ -1,17 +1,13 @@
 package bird;
 
+import java.util.ArrayList;
+
 public class PreyBird extends Bird{
 
-    private String salientChar;
-    private String name;
 
-    public PreyBird(String type, boolean isExtinct, int wingNum, String favFood) {
-        super(type, isExtinct, wingNum, favFood);
+    public PreyBird(String type, boolean isExtinct, int wingNum, ArrayList<food> favFood) {
+        super(type,"sharp, hooked beaks with visible nostrils",
+                isExtinct, wingNum, favFood);
     }
 
-    public PreyBird(String type, boolean isExtinct, int wingNum, String favFood, String name, String salientChar) {
-        super(type, isExtinct, wingNum, favFood);
-        this.name = name;
-        this.salientChar = salientChar;
-    }
 }
