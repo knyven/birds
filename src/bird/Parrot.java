@@ -1,51 +1,35 @@
 package bird;
-public class Parrot extends AbstractBird implements BirdInterface{
-    public Parrot(String name) {
-        super(name);
+public class Parrot extends Bird {
+
+    private int numFavWords;
+    private String favWord;
+
+
+    public Parrot(String type, boolean isExtinct, int wingNum, String favFood) {
+        super(type, isExtinct, wingNum, favFood);
+        this.favWord = null;
+        this.numFavWords = 0;
     }
 
-    @Override
-    public String getType() {
-        return null;
+    public Parrot(String type, boolean isExtinct, int wingNum, String favFood, int numFavWords, String favWord) {
+        super(type, isExtinct, wingNum, favFood);
+        this.numFavWords = numFavWords;
+        this.favWord = favWord;
     }
 
-    @Override
-    public String getChar() {
-        return null;
+    public int getNumFavWords() {
+        return this.numFavWords;
+    }
+    public String getFavWord() {
+        return this.favWord;
     }
 
-    @Override
-    public boolean boolFlight() {
-        return false;
+    public void setNumFavWords(int numFavWords) {
+        this.numFavWords = numFavWords;
     }
 
-    @Override
-    public boolean boolExtinct() {
-        return false;
-    }
-
-    @Override
-    public boolean boolMammal() {
-        return false;
-    }
-
-    @Override
-    public String getFood() {
-        return null;
-    }
-
-    @Override
-    public String getLocation() {
-        return null;
-    }
-
-    @Override
-    public boolean boolWater() {
-        return false;
-    }
-
-    @Override
-    public String getWaterName() {
-        return null;
+    public void setFavWord(String favWord) {
+        this.favWord = favWord;
     }
 }
+
