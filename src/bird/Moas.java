@@ -3,7 +3,8 @@ package bird;
 public class Moas extends FlightlessBirds{
     AviaryGroups aviaryGroups;
 
-    public Moas(){
+    public Moas(String name){
+
         this.aviaryGroups = AviaryGroups.FLIGHTESS;
         this.type = "Moas";
         this.isExtinct = true;

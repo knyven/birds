@@ -3,7 +3,8 @@ package bird;
 public class Kiwis extends FlightlessBirds{
     AviaryGroups aviaryGroups;
 
-    public Kiwis(){
+    public Kiwis(String name){
+        this.name = name;
         this.aviaryGroups = AviaryGroups.FLIGHTESS;
         this.type = "Kiwis";
         this.isExtinct = false;
