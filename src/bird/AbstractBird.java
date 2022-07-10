@@ -2,11 +2,11 @@ package bird;
 
 abstract class AbstractBird implements BirdInterface {
 
-    private String name;
-    private String type;
-    private boolean isExtinct;
-    private int wingNum;
-    private Food[] favFood;
+    protected String name;
+    protected String type;
+    protected boolean isExtinct;
+    protected int wingNum;
+    protected Food[] favFood;
 
     @Override
     public String getName() {
