@@ -1,12 +1,14 @@
 package bird;
 
 public class Moas extends FlightlessBirds{
-    AviaryGroups aviaryGroups;
+    //AviaryTypes aviaryGroups;
+
+    //public BirdType birdType;
 
     public Moas(String name){
-
-        this.aviaryGroups = AviaryGroups.FLIGHTESS;
-        this.type = "Moas";
+        this.name = name;
+        this.aviaryTypes = AviaryTypes.FLIGHTLESS;
+        this.birdType = BirdType.MOA;
         this.isExtinct = true;
         this.wingNum = 2;
         this.favFood = new Food[] {Food.VEGETATION, Food.FRUIT, Food.SEEDS};

@@ -2,8 +2,14 @@ package bird;
 
 import java.util.ArrayList;
 
-public class WaterBird extends AbstractBird{
-    private String waterType;
+abstract class WaterBird extends AbstractBird{
+    protected String nameOfWater;
+    private String sharedChar = "These birds are often found near bodies of water, such as freshwater " +
+            "or the ocean.";
+
+    String getNameOfWater(){
+        return this.nameOfWater;
+    }
 
 
 
