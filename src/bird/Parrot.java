@@ -2,16 +2,16 @@ package bird;
 
 import java.util.ArrayList;
 
-public class Parrot extends AbstractBird {
+abstract class Parrot extends AbstractBird {
 
     protected int numFavWords;
     protected String favWord;
     protected String salientChar;
     private String sharedChar = "intelligent and mimic sounds and short, curved beak";
 
-    public String getSalientChar(){
-        salientChar = "The common traits are: " + sharedChar;
-        return salientChar;
+    public String getChar(){
+        return "The specific traits are: " + salientChar + "\n" +
+                "The common traits are: " + sharedChar;
     }
 
     int getNumFavWords(){

@@ -2,16 +2,15 @@ package bird;
 
 import java.util.ArrayList;
 
-public class PreyBird extends AbstractBird{
+abstract class PreyBird extends AbstractBird{
 
-    private String salientChar;
-    private String sharedChar = "sharp hooked beaks and visible nostrils";
+    protected String salientChar;
+    static String sharedChar = "sharp hooked beaks and visible nostrils";
 
 
-
-    public String getSalientChar(){
-        salientChar = "The common traits are: " + sharedChar;
-        return salientChar;
+    public String getChar(){
+        return "The specific traits are: " + salientChar + "\n" +
+         "The common traits are: " + sharedChar;
     }
 
 }

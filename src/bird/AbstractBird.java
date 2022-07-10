@@ -1,9 +1,10 @@
 package bird;
 
 abstract class AbstractBird implements BirdInterface {
-
+    protected AviaryTypes aviaryTypes;
+    protected BirdType birdType;
     protected String name;
-    protected String type;
+
     protected boolean isExtinct;
     protected int wingNum;
     protected Food[] favFood;
@@ -15,7 +16,7 @@ abstract class AbstractBird implements BirdInterface {
 
     @Override
     public String getType() {
-        return type;
+        return this.birdType;
     }
 
     @Override
@@ -25,7 +26,7 @@ abstract class AbstractBird implements BirdInterface {
 
     @Override
     public int getWingNum() {
-        return wingNum;
+        return this.wingNum;
     }
 
     @Override

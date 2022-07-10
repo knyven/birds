@@ -1,12 +1,13 @@
 package bird;
 
+import java.util.Arrays;
+
 public class Parakeet extends Parrot{
-    public AviaryTypes aviaryType;
-    public BirdType birdType;
+
 
     public Parakeet(String name, int numFavWords, String favWord) {
         this.birdType = BirdType.PARAKEET;
-        this.aviaryType = AviaryTypes.OTHER;
+        this.aviaryTypes = AviaryTypes.OTHER;
         this.name = name;
         this.numFavWords = numFavWords;
         this.favWord = favWord;
@@ -16,4 +17,19 @@ public class Parakeet extends Parrot{
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.INSECTS};
     }
 
+
+    @Override
+    public String toString() {
+        return "Parakeet{" +
+                "numFavWords=" + numFavWords +
+                ", favWord='" + favWord + '\'' +
+                ", salientChar='" + salientChar + '\'' +
+                ", aviaryTypes=" + aviaryTypes +
+                ", birdType=" + birdType +
+                ", name='" + name + '\'' +
+                ", isExtinct=" + isExtinct +
+                ", wingNum=" + wingNum +
+                ", favFood=" + Arrays.toString(favFood) +
+                '}';
+    }
 }
