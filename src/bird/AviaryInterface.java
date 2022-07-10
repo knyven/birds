@@ -3,9 +3,15 @@ package bird;
 import java.util.ArrayList;
 
 public interface AviaryInterface {
-    String getBird();
-    boolean addBird(Object object);
-    boolean compatible(Object object);
+    ArrayList<AbstractBird> getBirds();
+    int getSize();
+    // access the bird type stored in BirdType enum
+    AviaryTypes getAviaryType();
+
+    Aviary addBird(AbstractBird object);
     String printAviary();
+
+    boolean isFull();
+    boolean isCompatible(AbstractBird object);
 
 }

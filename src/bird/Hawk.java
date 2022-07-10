@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public class Hawk extends PreyBird{
 
-
-
-
     public Hawk(String name){
         this.name = name;
         this.aviaryTypes = AviaryTypes.PREY;
@@ -18,4 +15,16 @@ public class Hawk extends PreyBird{
     }
 
 
+    @Override
+    public String toString() {
+        return "Hawk{" +
+                "salientChar='" + salientChar + '\'' +
+                ", aviaryTypes=" + aviaryTypes +
+                ", birdType=" + birdType +
+                ", name='" + name + '\'' +
+                ", isExtinct=" + isExtinct +
+                ", wingNum=" + wingNum +
+                ", favFood=" + Arrays.toString(favFood) +
+                '}';
+    }
 }
