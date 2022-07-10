@@ -19,7 +19,7 @@ public class Aviary implements AviaryInterface {
         this.aviaryLocation = aviaryLocation;
         this.aviaryTypes = aviaryTypes;
         this.birdNum = 0;
-        this.birdList = new ArrayList<>()
+        this.birdList = new ArrayList<>();
     }
 
 
