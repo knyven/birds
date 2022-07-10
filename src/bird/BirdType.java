@@ -9,7 +9,7 @@ public enum BirdType {
     OWL,
     MOA,
     PARAKEET,
-    PARROT,
+    GREYPARROT,
     COCKATOO,
     PIGEON,
     GREATAUK,

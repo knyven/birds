@@ -2,12 +2,12 @@ package bird;
 
 public interface ConservatoryInterface {
 
-    void rescueBird(Bird Object);
+    void rescueBird(Object object);
     String calculateFood();
     String printMap();
     String printIndex();
     String printSign();
-    int guestLookUp(Bird Object);
+    int guestLookUp(Object object);
 
 
 
