@@ -87,7 +87,7 @@ public class Conservatory implements ConservatoryInterface{
                 Food.AQUATICINVERTABRATES,
                 Food.NUTS,
                 Food.VEGETATION
-        }
+        };
         //set counter for all 13 foods
         int[] foodCounter = {0,0,0,0,0,0,0,0,0,0,0,0,0};
         int sizeOfFood = 13;

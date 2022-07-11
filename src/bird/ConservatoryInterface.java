@@ -9,7 +9,7 @@ public interface ConservatoryInterface {
     String calculateFood();
     String printMap();
     String printIndex();
-    String printSign();
+    String printSign(int indexOfAviary);
     int guestLookUp(String name);        // returns which aviary and other info about bird
     boolean conservatoryFull();
 
