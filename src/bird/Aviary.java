@@ -77,7 +77,42 @@ public class Aviary implements AviaryInterface {
 
     @Override
     public boolean isCompatible(AbstractBird object) {
-        return false;
+        boolean compatible = false;
+        switch (this.aviaryTypes){
+            case FLIGHTLESS:
+                if (object instanceof FlightlessBirds){
+                    compatible = true;
+                }else{
+                    compatible = false;
+                }
+                break;
+
+            case PREY:
+                if (object instanceof PreyBird){
+                    compatible = true;
+                }else{
+                    compatible = false;
+                }
+                break;
+            //might need to change child classes for this
+            case WATERFOWL:
+                if (object instanceof WaterBird){
+                    compatible = true;
+                }else{
+                    compatible = false;
+                }
+                break;
+
+            case OTHER:
+                if (object instanceof PreyBird || object instanceof WaterBird
+                || object instanceof FlightlessBirds){
+                    compatible = false;
+                }else {
+                    compatible = true;
+                }
+                break;
+        }
+        return compatible;
     }
 
 
