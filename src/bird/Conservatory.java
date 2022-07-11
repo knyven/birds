@@ -58,27 +58,29 @@ public class Conservatory implements ConservatoryInterface{
         }
 
 
-    @Override
     public boolean addAviary(Aviary object) {
         return false;
     }
 
-    @Override
     public String calculateFood() {
         return null;
     }
 
-    @Override
-    public String printMap() {
-        return null;
+    public StringBuilder printMap() {
+        StringBuilder map = new StringBuilder();
+        for (int i = 0; i < this.aviaryCount; i++) {
+            for(int j = 0; i < this.aviaryList.get(i).getBirdNum(); j++){
+                AbstractBird current = this.aviaryList.get(j).getBirds();
+            }
+
+        }
+        return map;
     }
 
-    @Override
     public String printIndex() {
         return null;
     }
 
-    @Override
     public String printSign() {
         return null;
     }
@@ -90,6 +92,6 @@ public class Conservatory implements ConservatoryInterface{
 
     @Override
     public boolean conservatoryFull() {
-        return this.aviaryCount == 20;
+        return this.aviaryCount == 1;
     }
 }

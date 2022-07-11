@@ -115,7 +115,9 @@ public class Aviary implements AviaryInterface {
         return compatible;
     }
 
-
+    public int getBirdNum() {
+        return this.birdNum;
+    }
 }
 
 

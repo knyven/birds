@@ -15,10 +15,14 @@ public class ConservatoryTest {
         Osprey b = new Osprey("Sahil");
         Hawk c = new Hawk("Venya");
         Pigeon d = new Pigeon("Sabrina");
+        GreatAuk e = new GreatAuk("Frank");
         cons.addBird(a);
         cons.addBird(b);
         cons.addBird(c);
         cons.addBird(d);
+        cons.addBird(e);
+        System.out.println(cons.printMap());
+
 
     }
 }
