@@ -98,7 +98,7 @@ public class Conservatory implements ConservatoryInterface{
             for(int j = 0; j < currAviary.getSize(); j++){
                 AbstractBird currBird = currAviary.birdList.get(j);
                 for(int f = 0; f < sizeOfFood; f++){
-                    if(currBird.getFavFood().contains(listOfFood[f])){
+                    if(currBird.getFavFood().equals(listOfFood[f])) {
                         foodCounter[f]++;
                     }
                 }
@@ -134,7 +134,7 @@ public class Conservatory implements ConservatoryInterface{
             System.out.println("Bird " + i
                     + "Name : " + bird.getName()
                     + ", Bird type: " + bird.getType()
-                    + ", Characteristics: " + bird.g
+                    + ", Characteristics: " + bird.get
                     + ",Number of Wings:" + bird.getWingNum()
                     + ", Favorite food to eat: " + bird.getFavFood();
         }
