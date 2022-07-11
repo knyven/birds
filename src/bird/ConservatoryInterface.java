@@ -2,12 +2,17 @@ package bird;
 
 public interface ConservatoryInterface {
 
-    void Conservatory (Object object);
+    Conservatory addBird(AbstractBird object);   // add bird to the conservatory
+
+    @Override
+    ConservatoryInterface(AbstractBird object);
+
+    boolean addAviary(Aviary object);  // creates new aviary to house added birds if an aviary does not exist
     String calculateFood();
     String printMap();
     String printIndex();
     String printSign();
-    int guestLookUp(Object object);
+    int guestLookUp(String name);        // returns which aviary and other info about bird
     boolean conservatoryFull();
 
 }

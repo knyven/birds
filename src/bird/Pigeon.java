@@ -8,7 +8,7 @@ abstract class Pigeon extends AbstractBird{
 
     public Pigeon(String name) {
         this.name = name;
-        this.birdType = BirdType.PIGEON);
+        this.birdType = BirdType.PIGEON;
         this.aviaryTypes = AviaryTypes.OTHER;
         this.isExtinct = false;
         this.wingNum = 2;
