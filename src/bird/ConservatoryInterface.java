@@ -7,7 +7,7 @@ public interface ConservatoryInterface {
 
     boolean addAviary(Aviary object);  // creates new aviary to house added birds if an aviary does not exist
     String calculateFood();
-    StringBuilder printMap();
+    String printMap();
     String printIndex();
     String printSign();
     int guestLookUp(String name);        // returns which aviary and other info about bird

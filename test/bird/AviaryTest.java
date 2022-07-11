@@ -15,6 +15,7 @@ public class AviaryTest {
         Aviary a = new Aviary("Test aviary", "Test location", AviaryTypes.PREY);
         a.addBird(x);
         a.addBird(y);
+        a.addBird(z);
         System.out.println(a.printAviary());
     }
 

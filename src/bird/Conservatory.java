@@ -15,26 +15,32 @@ public class Conservatory implements ConservatoryInterface{
 
     @Override
     public Conservatory addBird(AbstractBird object) {
+            // if conservatory is full return state exception
+        if (this.aviaryCount == 20)
+        {
+            throw new IllegalStateException("The conservatory is full");
+        }
+
+            // if conservatory is not full check for compatible aviaries to put current bird object into
         for (int i = 0; i < this.aviaryCount; i++) {
-            // iterate all the aviaries that are active and if one is not full and compatible put bird in there
-            if (!this.aviaryList.get(i).isFull() && this.aviaryList.get(i).isCompatible(object)) {
+            if (this.aviaryCount < 20 && this.aviaryList.get(i).isCompatible(object)) {
                 this.aviaryList.get(i).addBird(object);
+                this.aviaryCount++;
                 return this;
             }
-            if (this.aviaryList.get(i).isFull() && this.conservatoryFull()) {
-                throw new IllegalStateException("all aviaries are full and the conservatory is full whoops");
-            }
-                else { // aviary is full but conservatory still has space lets make a new aviary
-                    if (this.aviaryList.get(i).isFull() && !this.conservatoryFull()) {
-                        Aviary newAviary = (Aviary) this.makeAviary(object);
-                        newAviary.addBird(object);
-                        this.addAviary(newAviary);
-                        return this;
-                    }
-                }
+        }
+            // no compatible aviary but conservatory still has space lets make a new aviary for this bird object
+            if (this.aviaryCount < 20 ) {
+                Aviary newAviary = (Aviary) this.makeAviary(object);
+                newAviary.addBird(object);
+                this.addAviary(newAviary);
+                this.aviaryCount++;
+                return this;
             }
         return this;
-        }
+    }
+
+
 
 
     public Aviary makeAviary(AbstractBird object) {
@@ -66,12 +72,16 @@ public class Conservatory implements ConservatoryInterface{
         return null;
     }
 
-    public StringBuilder printMap() {
-        StringBuilder map = new StringBuilder();
+    public String printMap() {
+        String map = "Conservatory contains: ";
+
         for (int i = 0; i < this.aviaryCount; i++) {
-            for(int j = 0; i < this.aviaryList.get(i).getBirdNum(); j++){
-                AbstractBird current = this.aviaryList.get(j).getBirds();
+            Aviary currentAviary = this.aviaryList.get(i);
+            for (int j = 0; i < this.aviaryList.get(j).getBirdNum(); j++) {
+                AbstractBird currentBird = currentAviary.birdList.get(j);
+                map += currentBird.getName();
             }
+
 
         }
         return map;
@@ -92,6 +102,6 @@ public class Conservatory implements ConservatoryInterface{
 
     @Override
     public boolean conservatoryFull() {
-        return this.aviaryCount == 1;
+        return this.aviaryCount == 20;
     }
 }

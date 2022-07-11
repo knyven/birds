@@ -7,8 +7,8 @@ public class Aviary implements AviaryInterface {
     private int birdNum;
     private String aviaryName;                                // name of the aviary
     private final int CAP = 5;                                // max size of birds in aviary
-    private AviaryTypes aviaryTypes;                          // type of aviary
-    private ArrayList<AbstractBird> birdList;                 // list of birds stored in the aviary array
+    protected AviaryTypes aviaryTypes;                          // type of aviary
+    protected ArrayList<AbstractBird> birdList;                 // list of birds stored in the aviary array
     private String aviaryLocation;                            // location of the aviary
 
 
@@ -43,8 +43,7 @@ public class Aviary implements AviaryInterface {
         if(this.birdNum == 5) {
             throw new IllegalStateException("Too many birds for the aviary"); // no room to add
         } else {
-            if(!this.isCompatible(object))
-        {
+            if(!this.isCompatible(object)) {
             throw new IllegalStateException("Wrong aviary for current bird");
         } else {
                 this.birdList.add(object);
@@ -58,9 +57,10 @@ public class Aviary implements AviaryInterface {
     // printAviary prints out all the current birdTypes in the arraylist of the Aviary
     //
     public String printAviary() {
-        StringBuilder birds = new StringBuilder("Birds in the current aviary are:\n");
+        StringBuilder birds = new StringBuilder("Current aviary is a : ");
+        birds.append(this.aviaryTypes).append(" aviary\n");
         for(int i = 0; i < this.birdNum; i++) {
-            birds.append(this.birdList.get(i).getType()).append("\n");
+            birds.append(this.birdList.get(i).getName()).append(" : ").append(this.birdList.get(i).getType()).append("\n");
         }
         return birds.toString();
     }
