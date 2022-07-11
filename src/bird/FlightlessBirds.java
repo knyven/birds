@@ -9,4 +9,10 @@ abstract class FlightlessBirds extends AbstractBird{
         return flightlessChar;
     }
 
+    @Override
+    public Food[] getFavFood() {
+
+        return this.favFood;
+    }
+
 }

@@ -22,6 +22,12 @@ abstract class Parrot extends AbstractBird {
         return this.favWord;
     }
 
+    @Override
+    public Food[] getFavFood() {
+
+        return this.favFood;
+    }
+
 
 }
 

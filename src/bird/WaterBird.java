@@ -11,6 +11,12 @@ abstract class WaterBird extends AbstractBird{
         return this.nameOfWater;
     }
 
+    @Override
+    public Food[] getFavFood() {
+
+        return this.favFood;
+    }
+
 
 
 

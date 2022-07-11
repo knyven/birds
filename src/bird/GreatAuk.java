@@ -10,4 +10,5 @@ public class GreatAuk extends WaterBird{
         this.favFood = new Food[] {Food.FISH, Food.SMALLMAMMALS};
         this.nameOfWater = "North Atlantic coastal water";
     }
+
 }

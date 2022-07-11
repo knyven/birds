@@ -10,4 +10,5 @@ public class AfricanJacana extends WaterBird{
         this.favFood = new Food[] {Food.VEGETATION, Food.FISH, Food.VEGETATION};
         this.nameOfWater = "Lakes in Sub-Saharan Africa";
     }
+
 }

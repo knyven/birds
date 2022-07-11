@@ -13,4 +13,6 @@ public class Moas extends FlightlessBirds{
         this.wingNum = 2;
         this.favFood = new Food[] {Food.VEGETATION, Food.FRUIT, Food.SEEDS};
     }
+
+
 }

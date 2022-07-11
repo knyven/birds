@@ -10,4 +10,6 @@ public class HornedPuffin extends WaterBird{
         this.favFood = new Food[] {Food.FISH, Food.SMALLMAMMALS};
         this.nameOfWater = "North Pacific coastal water";
     }
+
+
 }

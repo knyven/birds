@@ -28,4 +28,5 @@ public class Osprey extends PreyBird{
                 ", favFood=" + Arrays.toString(favFood) +
                 '}';
     }
+
 }

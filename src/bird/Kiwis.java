@@ -10,4 +10,6 @@ public class Kiwis extends FlightlessBirds{
         this.wingNum = 2;
         this.favFood = new Food[] {Food.VEGETATION, Food.INSECTS};
     }
+
+
 }

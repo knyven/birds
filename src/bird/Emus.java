@@ -10,4 +10,6 @@ public class Emus extends FlightlessBirds{
         this.wingNum = 2;
         this.favFood = new Food[]{Food.INSECTS, Food.VEGETATION};
     }
+
+
 }

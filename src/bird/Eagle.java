@@ -28,4 +28,6 @@ public class Eagle extends PreyBird {
                 ", favFood=" + Arrays.toString(favFood) +
                 '}';
     }
+
+
 }

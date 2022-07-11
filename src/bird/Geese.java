@@ -11,4 +11,6 @@ public class Geese extends WaterBird{
         this.favFood = new Food[] {Food.VEGETATION, Food.SEEDS, Food.NUTS};
         this.nameOfWater = "freshwater ponds";
     }
+
+
 }

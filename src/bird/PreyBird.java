@@ -13,4 +13,10 @@ abstract class PreyBird extends AbstractBird{
          "The common traits are: " + sharedChar;
     }
 
+    @Override
+    public Food[] getFavFood() {
+
+        return this.favFood;
+    }
+
 }
