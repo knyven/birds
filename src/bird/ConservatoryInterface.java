@@ -4,8 +4,6 @@ public interface ConservatoryInterface {
 
     Conservatory addBird(AbstractBird object);   // add bird to the conservatory
 
-    @Override
-    ConservatoryInterface(AbstractBird object);
 
     boolean addAviary(Aviary object);  // creates new aviary to house added birds if an aviary does not exist
     String calculateFood();

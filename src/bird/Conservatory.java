@@ -23,6 +23,7 @@ public class Conservatory implements ConservatoryInterface{
             }
             if (this.aviaryList.get(i).isFull() && this.conservatoryFull()) {
                 throw new IllegalStateException("all aviaries are full and the conservatory is full whoops");
+            }
                 else { // aviary is full but conservatory still has space lets make a new aviary
                     if (this.aviaryList.get(i).isFull() && !this.conservatoryFull()) {
                         Aviary newAviary = (Aviary) this.makeAviary(object);
@@ -32,8 +33,9 @@ public class Conservatory implements ConservatoryInterface{
                     }
                 }
             }
+        return this;
         }
-    }
+
 
     public Aviary makeAviary(AbstractBird object) {
         String location = "Temp location";

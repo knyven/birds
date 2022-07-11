@@ -2,7 +2,7 @@ package bird;
 
 import java.util.ArrayList;
 
-abstract class Pigeon extends AbstractBird{
+public class Pigeon extends AbstractBird{
 
     public String salientChar;
 
