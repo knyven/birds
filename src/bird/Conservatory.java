@@ -74,7 +74,7 @@ public class Conservatory implements ConservatoryInterface{
     }
 
     public String calculateFood() {
-        Food[] listOfFood = {Food.BERRIES
+        Food[] listOfFood = {Food.BERRIES,
                 Food.SEEDS,
                 Food.FRUIT,
                 Food.INSECTS,
