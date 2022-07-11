@@ -20,13 +20,20 @@ public class Conservatory implements ConservatoryInterface{
 
     @Override
     public Conservatory addBird(AbstractBird object) {
-            // if conservatory is full return state exception
-        if (this.aviaryCount >= 20)
+        // if conservatory is full return state exception
+        if (this.conservatoryFull())
         {
-            throw new IllegalStateException("The conservatory is already full");
+            throw new IllegalStateException("The conservatory is full");
         }
 
-            // if conservatory is not full check for compatible aviaries to put current bird object into
+        if(this.conservatoryEmpty())
+        {
+            Aviary newAviary = (Aviary) this.makeAviary(object);
+            newAviary.addBird(object);
+            this.addAviary(newAviary);
+        }
+
+        // if conservatory is not full check for compatible aviaries to put current bird object into
         for (int i = 0; i < this.aviaryCount; i++) {
             if (this.aviaryCount < 20 && this.aviaryList.get(i).isCompatible(object)) {
                 this.aviaryList.get(i).addBird(object);
@@ -34,19 +41,16 @@ public class Conservatory implements ConservatoryInterface{
                 return this;
             }
         }
-            // no compatible aviary but conservatory still has space lets make a new aviary for this bird object
-            if (this.aviaryCount < 20 ) {
-                Aviary newAviary = (Aviary) this.makeAviary(object);
-                newAviary.addBird(object);
-                this.addAviary(newAviary);
-                this.aviaryCount++;
-                return this;
-            }
+        // no compatible aviary but conservatory still has space lets make a new aviary for this bird object
+        if (this.aviaryCount < 20 ) {
+            Aviary newAviary = (Aviary) this.makeAviary(object);
+            newAviary.addBird(object);
+            this.addAviary(newAviary);
+            this.aviaryCount++;
+            return this;
+        }
         return this;
     }
-
-
-
 
     public Aviary makeAviary(AbstractBird object) {
         String location = "Temp location";
@@ -66,13 +70,21 @@ public class Conservatory implements ConservatoryInterface{
             }
         }
         return new Aviary(name, location, type);
-        }
-
-
-    public boolean addAviary(Aviary object) {
-        return false;
     }
 
+
+    public Conservatory addAviary(Aviary object) {
+        if(this.conservatoryFull())
+        {
+            throw new IllegalStateException("Aviary is full!");
+        }
+        else
+        {
+            this.aviaryList.add(object);
+            this.aviaryCount++;
+        }
+        return this;
+    }
     public String calculateFood() {
         Food[] listOfFood = {Food.BERRIES,
                 Food.SEEDS,
@@ -98,7 +110,7 @@ public class Conservatory implements ConservatoryInterface{
             for(int j = 0; j < currAviary.getSize(); j++){
                 AbstractBird currBird = currAviary.birdList.get(j);
                 for(int f = 0; f < sizeOfFood; f++){
-                    if(currBird.getFavFood().equals(listOfFood[f])) {
+                    if(currBird.getFavFood().contains(listOfFood[f])){
                         foodCounter[f]++;
                     }
                 }
@@ -134,7 +146,7 @@ public class Conservatory implements ConservatoryInterface{
             System.out.println("Bird " + i
                     + "Name : " + bird.getName()
                     + ", Bird type: " + bird.getType()
-                    + ", Characteristics: " + bird.get
+                    + ", Characteristics: " + bird.g
                     + ",Number of Wings:" + bird.getWingNum()
                     + ", Favorite food to eat: " + bird.getFavFood();
         }
@@ -148,5 +160,10 @@ public class Conservatory implements ConservatoryInterface{
     @Override
     public boolean conservatoryFull() {
         return this.aviaryCount == 20;
+    }
+
+    @Override
+    public boolean conservatoryEmpty() {
+        return this.aviaryCount == 0;
     }
 }
