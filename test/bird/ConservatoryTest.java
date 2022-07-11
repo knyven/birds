@@ -11,15 +11,43 @@ public class ConservatoryTest {
 
         Conservatory cons = new Conservatory();
 
-        Hawk a = new Hawk("Sam");
-        Osprey b = new Osprey("Sahil");
-        Hawk c = new Hawk("Venya");
-        Pigeon d = new Pigeon("Sabrina");
-        GreatAuk e = new GreatAuk("Frank");
-        System.out.println(cons.addBird(a));
+        Hawk x = new Hawk("Tommy");
+        Hawk y = new Hawk("Sam");
+        Cockatoo z = new Cockatoo("John", 20, "Hello");
+        Aviary a = new Aviary("Test aviary", "Test location", AviaryTypes.PREY);
+        a.addBird(x);
+        a.addBird(y);
 
 
-        System.out.println(cons.printMap());
+        for(int i = 0; i < 121; i++) {
+            cons.addBird(x);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //System.out.println(cons.printMap());
+
+
+
+
+
+        //System.out.println(cons.printMap());
 
 
     }
