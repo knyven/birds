@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Aviary implements AviaryInterface {
 
-    private int birdNum;
-    private String aviaryName;                                // name of the aviary
+    public int birdNum;
+    protected String aviaryName;                                // name of the aviary
     private final int CAP = 5;                                // max size of birds in aviary
     protected AviaryTypes aviaryTypes;                          // type of aviary
-    protected ArrayList<AbstractBird> birdList;                 // list of birds stored in the aviary array
-    private String aviaryLocation;                            // location of the aviary
+    public ArrayList<AbstractBird> birdList;                 // list of birds stored in the aviary array
+    protected String aviaryLocation;                            // location of the aviary
 
 
     //====================================================================================================
@@ -22,6 +22,9 @@ public class Aviary implements AviaryInterface {
         this.birdList = new ArrayList<>();
     }
 
+    public String getAviaryName() {
+        return this.aviaryName;
+    }
 
     // returns back a list of birds in current aviary object
     public ArrayList<AbstractBird> getBirds() {
@@ -40,18 +43,17 @@ public class Aviary implements AviaryInterface {
     //  the current bird is compatible with the aviary, and it is not full
     //
     public Aviary addBird(AbstractBird object) {
-        if(this.birdNum == 5) {
+        if(this.isFull()) {
             throw new IllegalStateException("Too many birds for the aviary"); // no room to add
         } else {
             if(!this.isCompatible(object)) {
             throw new IllegalStateException("Wrong aviary for current bird");
         } else {
-                this.birdList.add(object);
+                this.birdList.add((AbstractBird) object);
                 this.birdNum ++;
+                return this;
             }
         }
-
-        return this;
     }
 
     // printAviary prints out all the current birdTypes in the arraylist of the Aviary
@@ -69,7 +71,7 @@ public class Aviary implements AviaryInterface {
     //
     // return true if the aviary is full
     public boolean isFull() {
-        return this.birdNum == 5;
+        return this.birdList.size() > 5;
     }
 
     // isCompatible takes a AbstractBird object and compares it to another AbstractBird object by

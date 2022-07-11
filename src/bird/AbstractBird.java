@@ -31,7 +31,7 @@ abstract class AbstractBird implements BirdInterface {
 
     @Override
     public Food[] getFavFood() {
-        return this.favFood;
+        return favFood;
     }
 
 }

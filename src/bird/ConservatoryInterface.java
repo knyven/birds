@@ -2,10 +2,10 @@ package bird;
 
 public interface ConservatoryInterface {
 
-    Conservatory addBird(AbstractBird object);   // add bird to the conservatory
+    Conservatory rescueBird(AbstractBird object);   // add bird to the conservatory
 
 
-    boolean addAviary(Aviary object);  // creates new aviary to house added birds if an aviary does not exist
+    Conservatory addAviary(Aviary object);  // creates new aviary to house added birds if an aviary does not exist
     String calculateFood();
     String printMap();
     String printIndex();
