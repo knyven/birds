@@ -13,6 +13,10 @@ public class Conservatory implements ConservatoryInterface{
         this.aviaryList = new ArrayList<>();
     }
 
+    public ArrayList<Aviary> getAviaryList() {
+        return this.aviaryList;
+    }
+
 
     @Override
     public Conservatory addBird(AbstractBird object) {
