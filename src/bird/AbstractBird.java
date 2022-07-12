@@ -29,9 +29,9 @@ abstract class AbstractBird implements BirdInterface {
         return this.wingNum;
     }
 
-    @Override
+
     public Food[] getFavFood() {
-        return favFood;
+        return this.favFood;
     }
 
     public String getSharedChar(){

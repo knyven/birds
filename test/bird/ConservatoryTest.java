@@ -10,18 +10,22 @@ public class ConservatoryTest {
     public void addBird() {
 
         Conservatory cons = new Conservatory();
+        Conservatory cons1 = new Conservatory();
 
         Hawk x = new Hawk("Tommy");
         Hawk y = new Hawk("Sam");
         Cockatoo z = new Cockatoo("John", 20, "Hello");
-        Aviary a = new Aviary("Test aviary", "Test location", AviaryTypes.PREY);
-        a.addBird(x);
-        a.addBird(y);
+        cons.addBird(x);
 
 
-        for(int i = 0; i < 121; i++) {
-            cons.addBird(x);
+        for(int i = 0; i < 5; i++) {
+            cons1.addBird(x);
         }
+
+        cons1.printMap();
+
+
+
 
 
 
