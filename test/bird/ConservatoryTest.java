@@ -15,12 +15,15 @@ public class ConservatoryTest {
         Hawk x = new Hawk("Tommy");
         Hawk y = new Hawk("Sam");
         Cockatoo z = new Cockatoo("John", 20, "Hello");
-        cons.addBird(x);
+        cons.rescueBird(x);
 
 
         for(int i = 0; i < 20; i++) {
-            cons1.addBird(x);
+            cons1.rescueBird(x);
+            cons1.rescueBird(y);
+            cons1.rescueBird(z);
         }
+
 
         cons1.printMap();
 
