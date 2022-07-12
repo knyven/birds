@@ -14,6 +14,10 @@ public class Aviary implements AviaryInterface {
 
     //====================================================================================================
 
+    public String getAviaryLocation() {
+        return this.aviaryLocation;
+    }
+
     public Aviary(String aviaryName, String aviaryLocation, AviaryTypes aviaryTypes) {
         this.aviaryName = aviaryName;
         this.aviaryLocation = aviaryLocation;

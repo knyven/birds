@@ -10,7 +10,7 @@ public interface ConservatoryInterface {
     void printMap();
     String printIndex();
     String printSign(int indexOfAviary);
-    String guestLookUp(String type);        // returns which aviary and other info about bird
+    StringBuilder guestLookUp(String type);        // returns which aviary and other info about bird
     boolean conservatoryFull();
     boolean conservatoryEmpty();
 

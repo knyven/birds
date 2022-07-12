@@ -2,7 +2,6 @@ package bird;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Conservatory implements ConservatoryInterface{
     private int aviaryCount;   // num of aviaries in the conservatory
@@ -183,11 +182,30 @@ public class Conservatory implements ConservatoryInterface{
                     + ", Bird type: " + bird.getType()
                     + ", Characteristics: " + bird.getSharedChar()
                     + ",Number of Wings:" + bird.getWingNum()
-                    + ", Favorite food to eat: " + bird.getFavFood();
+                    + ", Favorite food to eat: " + Arrays.toString(bird.getFavFood());
         }
         return sign;
     }
 
+    public StringBuilder guestLookUp(String birdType){
+        String name = birdType.toUpperCase();
+        StringBuilder returnLocation = new StringBuilder();
+        for(Aviary currAviary : this.aviaryList) {
+            for (int i = 0; i < currAviary.getSize(); i++) {
+                AbstractBird currBird = currAviary.birdList.get(i);
+                if (name.equals(currBird.birdType.toString())) {
+                    returnLocation.append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").append("Aviary Location: ").append(currAviary.getAviaryLocation()).append("\n").append("Aviary Type: ").append(currAviary.getAviaryType()).append("\n").append("Bird: ").append(currBird.getType()).append("\n").append("Favorite food to eat: ").append(Arrays.toString(currBird.getFavFood())).append("\n\n");
+                }
+            }
+        }
+        if(returnLocation.toString().equals("")){
+            return new StringBuilder("Bird not found");
+        } else {
+            return returnLocation;
+        }
+    }
+
+    /*
     @Override
     public String guestLookUp(String birdType) {
         String lookUp = "";
@@ -219,7 +237,7 @@ public class Conservatory implements ConservatoryInterface{
         }
         return lookUp;
     }
-
+    */
 
     public boolean conservatoryFull() {
         return this.aviaryCount == 20;

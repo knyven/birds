@@ -2,7 +2,7 @@ package bird;
 
 public interface BirdInterface {
     String getName();
-    String getType();
+    BirdType getType();
     boolean isExtinct();
     int getWingNum();
 }

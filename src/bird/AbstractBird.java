@@ -16,8 +16,8 @@ abstract class AbstractBird implements BirdInterface {
     }
     //get type of bird
     @Override
-    public String getType() {
-        return String.valueOf(this.birdType);
+    public BirdType getType() {
+        return this.birdType;
     }
     //true if bird is extinct otherwise false
     @Override

@@ -26,11 +26,16 @@ public class ConservatoryTest {
             cons1.rescueBird(u);
         }
 
+        Swan swanny = new Swan("Swanny");
 
-        cons1.printMap();
+        cons1.rescueBird(swanny);
+        System.out.println(cons1.guestLookUp("HAWK"));
+
+
+        //cons1.printMap();
         //System.out.println(cons1.calculateFood());
         //System.out.println(cons1.printIndex());
-        cons1.calcFood();
+        //cons1.calcFood();
 
 
 
