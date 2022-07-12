@@ -59,8 +59,8 @@ public class Aviary implements AviaryInterface {
     // printAviary prints out all the current birdTypes in the arraylist of the Aviary
     //
     public String printAviary() {
-        StringBuilder birds = new StringBuilder("Current aviary is a : ");
-        birds.append(this.aviaryTypes).append(" aviary\n");
+        StringBuilder birds = new StringBuilder("Current aviary is a :");
+        birds.append(this.aviaryTypes).append(" aviary\n").append("It is located at: ").append(this.aviaryLocation).append("\n");
         for(int i = 0; i < this.birdNum; i++) {
             birds.append(this.birdList.get(i).getName()).append(" : ").append(this.birdList.get(i).getType()).append("\n");
         }
@@ -79,41 +79,14 @@ public class Aviary implements AviaryInterface {
 
     @Override
     public boolean isCompatible(AbstractBird object) {
-        boolean compatible = false;
-        switch (this.aviaryTypes){
-            case FLIGHTLESS:
-                if (object instanceof FlightlessBirds){
-                    compatible = true;
-                }else{
-                    compatible = false;
-                }
-                break;
-
-            case PREY:
-                if (object instanceof PreyBird){
-                    compatible = true;
-                }else{
-                    compatible = false;
-                }
-                break;
+        boolean compatible = switch (this.aviaryTypes) {
+            case FLIGHTLESS -> object instanceof FlightlessBirds;
+            case PREY -> object instanceof PreyBird;
             //might need to change child classes for this
-            case WATERFOWL:
-                if (object instanceof WaterBird){
-                    compatible = true;
-                }else{
-                    compatible = false;
-                }
-                break;
-
-            case OTHER:
-                if (object instanceof PreyBird || object instanceof WaterBird
-                || object instanceof FlightlessBirds){
-                    compatible = false;
-                }else {
-                    compatible = true;
-                }
-                break;
-        }
+            case WATERFOWL -> object instanceof WaterBird;
+            case OTHER -> !(object instanceof PreyBird) && !(object instanceof WaterBird)
+                    && !(object instanceof FlightlessBirds);
+        };
         return compatible;
     }
 

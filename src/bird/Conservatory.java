@@ -1,7 +1,7 @@
 package bird;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 
 public class Conservatory implements ConservatoryInterface{
     private int aviaryCount;   // num of aviaries in the conservatory
@@ -135,33 +135,31 @@ public class Conservatory implements ConservatoryInterface{
     }
 
 
-
-
-    @Override
     public void printMap() {
         String map = "Conservatory contains: ";
-
-        for (int i = 0; i < this.aviaryList.size(); i++) {
-
+        for (Aviary currentAviary : this.aviaryList) {
             // loop over individual aviary list containing up to 5 bird objects
-            Aviary currentAviary = this.aviaryList.get(i);
-            System.out.println();
-
-            for (int j = 0; j < currentAviary.birdList.size(); j++) {
-                AbstractBird currentBird = currentAviary.birdList.get(j);
-                System.out.println(currentBird.getName() + " - " + currentBird.getType());
-            }
+            System.out.println(currentAviary.printAviary());
         }
     }
 
     public String printIndex() {
-        return null;
+        ArrayList<String> birdIndex = new ArrayList<>();
+        for(Aviary currAviary : this.aviaryList) {
+            for(int i = 0; i <currAviary.getSize(); i++) {
+                AbstractBird currBird = currAviary.birdList.get(i);
+                birdIndex.add(currBird.getName() + "========" + currAviary.getAviaryName() + "\n");
+            }
+        }
+        Collections.sort(birdIndex);
+        String index = "Index of all birds in conservatory: \n";
+        for(int i = 0; i <birdIndex.size(); i++) {
+            index += birdIndex.get(i);
+        }
+        return index;
     }
 
 
-    public String printSign() {
-        return null;
-    }
 
 
     public String printSign(int indexOfAviary) {
@@ -185,7 +183,7 @@ public class Conservatory implements ConservatoryInterface{
         return 0;
     }
 
-    @Override
+
     public boolean conservatoryFull() {
         return this.aviaryCount == 20;
     }

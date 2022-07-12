@@ -14,6 +14,7 @@ public class ConservatoryTest {
 
         Hawk x = new Hawk("Tommy");
         Hawk y = new Hawk("Sam");
+        Kiwis u = new Kiwis("Nathan");
         Cockatoo z = new Cockatoo("John", 20, "Hello");
         cons.rescueBird(x);
 
@@ -22,39 +23,13 @@ public class ConservatoryTest {
             cons1.rescueBird(x);
             cons1.rescueBird(y);
             cons1.rescueBird(z);
+            cons1.rescueBird(u);
         }
 
 
         cons1.printMap();
+        System.out.println(cons1.printIndex());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //System.out.println(cons.printMap());
-
-
-
-
-
-        //System.out.println(cons.printMap());
 
 
     }
