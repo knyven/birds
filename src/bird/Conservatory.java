@@ -102,16 +102,37 @@ public class Conservatory implements ConservatoryInterface{
             //access the birds in each aviary
             for(int j = 0; j < currAviary.getSize(); j++){
                 AbstractBird currBird = currAviary.birdList.get(j);
+                //if birds fav found is found in listofFood add 1 to the corresponding index in foodCounter
                 for(int f = 0; f < sizeOfFood; f++){
-                    if(currBird.getFavFood().equals((listOfFood[f]))){
+                    if(currBird.getFavFood().equals(listOfFood[f])){
                         foodCounter[f]++;
                     }
                 }
             }
         }
-        return null;
+        //output food counts along with birds
+        String str = "Food types \t\t\t\t Number of Birds";
+        for(int i = 0; i < sizeOfFood; i++){
+            if(foodCounter[i] > 0){
+                if(listOfFood[i].toString().length() < 10){
+                    str += listOfFood[i] + "\t\t\t\t" + foodCounter[i] + "\n";
+                }else {
+                    switch (listOfFood[i]) {
+                        case VEGETATION, OTHERBIRDS:
+                            str += listOfFood[i].toString() + "\t\t\t\t" + foodCounter[i] + "\n";
+                            break;
+                        case SMALLMAMMALS:
+                            str += listOfFood[i].toString() + "\t\t\t" + foodCounter[i] + "\n";
+                            break;
+                        case AQUATICINVERTABRATES:
+                            str += listOfFood[i].toString() + "\t" + foodCounter[i] + "\n";
+                            break;
+                    }
+                }
+            }
+        }
+        return str;
     }
-
 
 
 
@@ -146,16 +167,17 @@ public class Conservatory implements ConservatoryInterface{
     public String printSign(int indexOfAviary) {
 
         Aviary someAviary = aviaryList.get(indexOfAviary);
-        for(int i = 0; i < someAviary.getSize(); ++i){
+        String sign = "";
+        for (int i = 0; i < someAviary.getSize(); ++i) {
             AbstractBird bird = someAviary.birdList.get(i);
-            System.out.println("Bird " + i
+            sign += "Bird " + i
                     + "Name : " + bird.getName()
                     + ", Bird type: " + bird.getType()
-                    + ", Characteristics: "
+                    + ", Characteristics: " + bird.getSharedChar()
                     + ",Number of Wings:" + bird.getWingNum()
-                    + ", Favorite food to eat: " + Arrays.toString(bird.getFavFood()));
+                    + ", Favorite food to eat: " + bird.getFavFood();
         }
-        return null;
+        return sign;
     }
 
     @Override
