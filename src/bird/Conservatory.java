@@ -100,12 +100,6 @@ public class Conservatory implements ConservatoryInterface{
         return this;
     }
 
-    @Override
-    public String calculateFood() {
-        return null;
-    }
-
-
 
 
     public String calculateFood() {
@@ -132,61 +126,71 @@ public class Conservatory implements ConservatoryInterface{
             //access the birds in each aviary
             for(int j = 0; j < currAviary.getSize(); j++){
                 AbstractBird currBird = currAviary.birdList.get(j);
+                //if birds fav found is found in listofFood add 1 to the corresponding index in foodCounter
                 for(int f = 0; f < sizeOfFood; f++){
-                    if(currBird.getFavFood().eqauls(listOfFood[f])){
+                    if(currBird.getFavFood().equals(listOfFood[f])){
                         foodCounter[f]++;
                     }
                 }
             }
         }
-        return null;
-    }
-
-
-
-
-
-    @Override
-    public void printMap() {
-        String map = "Conservatory contains: ";
-
-        for (int i = 0; i < this.aviaryList.size(); i++) {
-
-            // loop over individual aviary list containing up to 5 bird objects
-            Aviary currentAviary = this.aviaryList.get(i);
-            System.out.println();
-
-            for (int j = 0; j < currentAviary.birdList.size(); j++) {
-                AbstractBird currentBird = currentAviary.birdList.get(j);
-                System.out.println(currentBird.getName());
-                System.out.println(currentBird.getType());
+        //output food counts along with birds
+        String str = "Food types \t\t\t\t Number of Birds";
+        for(int i = 0; i < sizeOfFood; i++){
+            if(foodCounter[i] > 0){
+                if(listOfFood[i].toString().length() < 10){
+                    str += listOfFood[i] + "\t\t\t\t" + foodCounter[i] + "\n";
+                }else {
+                    switch (listOfFood[i]) {
+                        case VEGETATION, OTHERBIRDS:
+                            str += listOfFood[i].toString() + "\t\t\t\t" + foodCounter[i] + "\n";
+                            break;
+                        case SMALLMAMMALS:
+                            str += listOfFood[i].toString() + "\t\t\t" + foodCounter[i] + "\n";
+                            break;
+                        case AQUATICINVERTABRATES:
+                            str += listOfFood[i].toString() + "\t" + foodCounter[i] + "\n";
+                            break;
+                    }
+                }
             }
         }
+        return str;
+    }
+
+    public String printMap() {
+        String map = "Conservatory contains: ";
+
+        for (int i = 0; i < this.aviaryCount; i++) {
+            Aviary currentAviary = this.aviaryList.get(i);
+            for (int j = 0; i < this.aviaryList.get(j).getBirdNum(); j++) {
+                AbstractBird currentBird = currentAviary.birdList.get(j);
+                map += currentBird.getName();
+            }
+
+
+        }
+        return map;
     }
 
     public String printIndex() {
         return null;
     }
 
-
-    public String printSign() {
-        return null;
-    }
-
-
     public String printSign(int indexOfAviary) {
 
         Aviary someAviary = aviaryList.get(indexOfAviary);
-        for(int i = 0; i < someAviary.getSize(); ++i){
+        String sign = "";
+        for (int i = 0; i < someAviary.getSize(); ++i) {
             AbstractBird bird = someAviary.birdList.get(i);
-            System.out.println("Bird " + i
+            sign += "Bird " + i
                     + "Name : " + bird.getName()
                     + ", Bird type: " + bird.getType()
-                    + ", Characteristics: "
+                    + ", Characteristics: " + bird.getSharedChar()
                     + ",Number of Wings:" + bird.getWingNum()
-                    + ", Favorite food to eat: " + Arrays.toString(bird.getFavFood()));
+                    + ", Favorite food to eat: " + bird.getFavFood();
         }
-        return null;
+        return sign;
     }
 
     @Override
@@ -199,7 +203,7 @@ public class Conservatory implements ConservatoryInterface{
         return this.aviaryCount == 20;
     }
 
-
+    @Override
     public boolean conservatoryEmpty() {
         return this.aviaryCount == 0;
     }
