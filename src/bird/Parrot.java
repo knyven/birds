@@ -1,5 +1,5 @@
 package bird;
-
+//Abstract class for parrot bird type
 abstract class Parrot extends AbstractBird {
 
     protected int numFavWords;

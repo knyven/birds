@@ -25,9 +25,17 @@ public class Aviary implements AviaryInterface {
         this.birdNum = 0;
         this.birdList = new ArrayList<>();
     }
-
+    //getters and setters for aviaryname and location so user could access if needed and add their own name
     public String getAviaryName() {
         return this.aviaryName;
+    }
+
+    public String setAviaryName(){
+        this.aviaryName = aviaryName;
+    }
+
+    public String setAviaryLocation(){
+        this.aviaryLocation = aviaryLocation;
     }
 
     // returns back a list of birds in current aviary object

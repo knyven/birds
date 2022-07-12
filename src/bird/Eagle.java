@@ -1,7 +1,7 @@
 package bird;
 
 import java.util.Arrays;
-
+//Child class for Eagle Bird that extends Prey Bird type
 public class Eagle extends PreyBird {
 
 

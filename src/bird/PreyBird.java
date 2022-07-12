@@ -1,5 +1,5 @@
 package bird;
-
+//Abstract class for prey bird type
 abstract class PreyBird extends AbstractBird{
 
     protected String salientChar;

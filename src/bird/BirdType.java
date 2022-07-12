@@ -1,5 +1,5 @@
 package bird;
-
+//Enum list of all classified bird types
 public enum BirdType {
     HAWK,
     EAGLE,

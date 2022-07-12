@@ -8,6 +8,7 @@ public interface AviaryInterface {
     // access the bird type stored in BirdType enum
     AviaryTypes getAviaryType();
 
+    //adds bird object into an aviary, also checks for type
     Aviary addBird(AbstractBird object);
     String printAviary();
 
