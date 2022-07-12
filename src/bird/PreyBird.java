@@ -1,7 +1,5 @@
 package bird;
 
-import java.util.ArrayList;
-
 abstract class PreyBird extends AbstractBird{
 
     protected String salientChar;

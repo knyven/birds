@@ -1,7 +1,10 @@
 package bird;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Conservatory implements ConservatoryInterface{
     private int aviaryCount;   // num of aviaries in the conservatory
@@ -120,15 +123,10 @@ public class Conservatory implements ConservatoryInterface{
                         str += listOfFood[i] + "\t\t\t\t" + foodCounter[i] + "\n";
                     } else {
                         switch (listOfFood[i]) {
-                            case VEGETATION, OTHERBIRDS:
-                                str += listOfFood[i].toString() + "\t\t\t\t" + foodCounter[i] + "\n";
-                                break;
-                            case SMALLMAMMALS:
-                                str += listOfFood[i].toString() + "\t\t\t" + foodCounter[i] + "\n";
-                                break;
-                            case AQUATICINVERTABRATES:
-                                str += listOfFood[i].toString() + "\t" + foodCounter[i] + "\n";
-                                break;
+                            case VEGETATION, OTHERBIRDS ->
+                                    str += listOfFood[i].toString() + "\t\t\t\t" + foodCounter[i] + "\n";
+                            case SMALLMAMMALS -> str += listOfFood[i].toString() + "\t\t\t" + foodCounter[i] + "\n";
+                            case AQUATICINVERTABRATES -> str += listOfFood[i].toString() + "\t" + foodCounter[i] + "\n";
                         }
                     }
                 }
@@ -137,7 +135,17 @@ public class Conservatory implements ConservatoryInterface{
 
     }
 
-
+    public Map<String, Long> calcFood() {
+        ArrayList<String> food = new ArrayList<>();
+        for (Aviary currAviary : this.aviaryList) {
+            for (int i = 0; i < currAviary.getSize(); i++) {
+                AbstractBird currBird = currAviary.birdList.get(i);
+                food.add(Arrays.toString(currBird.getFavFood()));
+            }
+        }
+        Map<String, Long> counts = food.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+        return counts;
+    }
     public void printMap() {
         String map = "Conservatory contains: ";
         for (Aviary currentAviary : this.aviaryList) {
@@ -161,9 +169,6 @@ public class Conservatory implements ConservatoryInterface{
         }
         return index.toString();
     }
-
-
-
 
     public String printSign(int indexOfAviary) {
 

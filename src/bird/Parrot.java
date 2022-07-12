@@ -1,7 +1,5 @@
 package bird;
 
-import java.util.ArrayList;
-
 abstract class Parrot extends AbstractBird {
 
     protected int numFavWords;
@@ -22,7 +20,7 @@ abstract class Parrot extends AbstractBird {
         return this.favWord;
     }
 
-    @Override
+
     public Food[] getFavFood() {
 
         return this.favFood;
