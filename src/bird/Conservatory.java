@@ -17,13 +17,41 @@ public class Conservatory implements ConservatoryInterface{
         return this.aviaryList;
     }
 
-    public Conservatory addBird(AbstractBird object) {
-        // CASE 1:
-        // full conservatory and no more space
-        // return state exception
-        if (this.conservatoryFull())
-        {
-            throw new IllegalStateException("The conservatory is full");
+
+
+
+    public Aviary makeAviary(AbstractBird object) {
+        String location = "Temp location";
+        String name = "Temp name";
+        AviaryTypes type;
+        if (object.aviaryTypes == AviaryTypes.FLIGHTLESS) {
+            type = AviaryTypes.FLIGHTLESS;
+        } else {
+            if (object.aviaryTypes == AviaryTypes.WATERFOWL) {
+                type = AviaryTypes.WATERFOWL;
+            }else {
+                if(object.aviaryTypes == AviaryTypes.PREY) {
+                    type = AviaryTypes.PREY;
+                } else {
+                    type = AviaryTypes.OTHER;
+                }
+            }
+        }
+        return new Aviary(name, location, type);
+    }
+
+
+    @Override
+    public Conservatory rescueBird(AbstractBird object) {
+        //
+        // if there is a compatible aviary put and the conservatory
+        //
+        for(Aviary aviary : this.aviaryList) {
+            if (aviary.isCompatible(object) && !aviary.isFull()) {
+                aviary.addBird(object);
+                return this;
+            }
+
         }
         // CASE 2:
         // if the conservatory is completely empty we have to create a new aviary and put the bird
@@ -57,33 +85,6 @@ public class Conservatory implements ConservatoryInterface{
             }
             return this;
         }
-    }
-
-
-    public Aviary makeAviary(AbstractBird object) {
-        String location = "Temp location";
-        String name = "Temp name";
-        AviaryTypes type;
-        if (object.aviaryTypes == AviaryTypes.FLIGHTLESS) {
-            type = AviaryTypes.FLIGHTLESS;
-        } else {
-            if (object.aviaryTypes == AviaryTypes.WATERFOWL) {
-                type = AviaryTypes.WATERFOWL;
-            }else {
-                if(object.aviaryTypes == AviaryTypes.PREY) {
-                    type = AviaryTypes.PREY;
-                } else {
-                    type = AviaryTypes.OTHER;
-                }
-            }
-        }
-        return new Aviary(name, location, type);
-    }
-
-
-    @Override
-    public Conservatory rescueBird(AbstractBird object) {
-        return null;
     }
 
     public Conservatory addAviary(Aviary object) {
@@ -132,7 +133,7 @@ public class Conservatory implements ConservatoryInterface{
             for(int j = 0; j < currAviary.getSize(); j++){
                 AbstractBird currBird = currAviary.birdList.get(j);
                 for(int f = 0; f < sizeOfFood; f++){
-                    if(currBird.getFavFood().contains(listOfFood[f])){
+                    if(currBird.getFavFood().eqauls(listOfFood[f])){
                         foodCounter[f]++;
                     }
                 }
