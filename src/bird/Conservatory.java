@@ -40,7 +40,7 @@ public class Conservatory implements ConservatoryInterface{
         // the aviary that fits its instance
         else {
             for (Aviary aviary : this.aviaryList) {
-                if (aviary.isCompatible(object) && !this.conservatoryFull()) {
+                if (aviary.isCompatible(object) && this.conservatoryFull()) {
                     aviary.addBird(object);
                     return this;
                 }
@@ -48,7 +48,7 @@ public class Conservatory implements ConservatoryInterface{
                 // CASE 4:
                 // no compatible aviary but conservatory still has space lets make a new aviary for this bird object
                 //
-                else if (!aviary.isCompatible(object) && this.conservatoryFull()){
+                else if (!aviary.isCompatible(object) && !this.conservatoryFull()){
                     Aviary newAviary = (Aviary) this.makeAviary(object);
                     newAviary.addBird(object);
                     this.addAviary(newAviary);
@@ -98,6 +98,15 @@ public class Conservatory implements ConservatoryInterface{
         }
         return this;
     }
+
+    @Override
+    public String calculateFood() {
+        return null;
+    }
+
+
+
+
     public String calculateFood() {
         Food[] listOfFood = {Food.BERRIES,
                 Food.SEEDS,
@@ -131,16 +140,25 @@ public class Conservatory implements ConservatoryInterface{
         }
         return null;
     }
+
+
+
+
+
     @Override
     public void printMap() {
         String map = "Conservatory contains: ";
 
-        for (int i = 0; i < this.aviaryCount; i++) {
-            Aviary currentAviary = this.aviaryList.get(i);
+        for (int i = 0; i < this.aviaryList.size(); i++) {
 
-            for (int j = 0; i < currentAviary.getSize(); j++) {
-                AbstractBird currentBird = currentAviary.birdList.get(i);
+            // loop over individual aviary list containing up to 5 bird objects
+            Aviary currentAviary = this.aviaryList.get(i);
+            System.out.println();
+
+            for (int j = 0; j < currentAviary.birdList.size(); j++) {
+                AbstractBird currentBird = currentAviary.birdList.get(j);
                 System.out.println(currentBird.getName());
+                System.out.println(currentBird.getType());
             }
         }
     }
@@ -149,7 +167,7 @@ public class Conservatory implements ConservatoryInterface{
         return null;
     }
 
-    @Override
+
     public String printSign() {
         return null;
     }

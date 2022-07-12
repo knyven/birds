@@ -5,5 +5,5 @@ public interface BirdInterface {
     String getType();
     boolean isExtinct();
     int getWingNum();
-    boolean getFavFood();
+    Food[] getFavFood();
 }

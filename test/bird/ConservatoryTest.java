@@ -18,7 +18,7 @@ public class ConservatoryTest {
         cons.addBird(x);
 
 
-        for(int i = 0; i < 5; i++) {
+        for(int i = 0; i < 20; i++) {
             cons1.addBird(x);
         }
 
