@@ -3,10 +3,10 @@ package bird;
 import java.util.ArrayList;
 
 abstract class FlightlessBirds extends AbstractBird{
-    private static String[] flightlessChar = {"Lives on the ground", "Has no or underdeveloped wings"};
+    private static String sharedChar = "Lives on the ground and has underdeveloped wings or no wings";
 
-    public String[] getChar(){
-        return flightlessChar;
+    public String getChar(){
+        return sharedChar;
     }
 
     @Override

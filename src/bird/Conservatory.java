@@ -1,7 +1,6 @@
 package bird;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Conservatory implements ConservatoryInterface{
     private int aviaryCount;   // num of aviaries in the conservatory
@@ -18,7 +17,6 @@ public class Conservatory implements ConservatoryInterface{
     }
 
 
-    @Override
     public Conservatory addBird(AbstractBird object) {
         // if conservatory is full return state exception
         if (this.conservatoryFull())
@@ -110,13 +108,34 @@ public class Conservatory implements ConservatoryInterface{
             for(int j = 0; j < currAviary.getSize(); j++){
                 AbstractBird currBird = currAviary.birdList.get(j);
                 for(int f = 0; f < sizeOfFood; f++){
-                    if(currBird.getFavFood().contains(listOfFood[f])){
+                    if(currBird.getFavFood().equals(listOfFood[f])){
                         foodCounter[f]++;
                     }
                 }
             }
         }
 
+        String str = "Food types \t\t\t\t Number of Birds";
+        for(int i = 0; i < sizeOfFood; i++){
+            if(foodCounter[i] > 0){
+              if(listOfFood[i].toString().length() < 10){
+                  str += listOfFood[i] + "\t\t\t\t" + foodCounter[i] + "\n";
+              }else {
+                  switch (listOfFood[i]) {
+                      case VEGETATION, OTHERBIRDS:
+                          str += listOfFood[i].toString() + "\t\t\t\t" + foodCounter[i] + "\n";
+                          break;
+                      case SMALLMAMMALS:
+                          str += listOfFood[i].toString() + "\t\t\t" + foodCounter[i] + "\n";
+                          break;
+                      case AQUATICINVERTABRATES:
+                          str += listOfFood[i].toString() + "\t" + foodCounter[i] + "\n";
+                          break;
+                       }
+                 }
+            }
+        }
+        return str;
     }
 
     public String printMap() {
@@ -141,15 +160,17 @@ public class Conservatory implements ConservatoryInterface{
     public String printSign(int indexOfAviary) {
 
         Aviary someAviary = aviaryList.get(indexOfAviary);
-        for(int i = 0; i < someAviary.getSize(); ++i){
+        String sign = "";
+        for (int i = 0; i < someAviary.getSize(); ++i) {
             AbstractBird bird = someAviary.birdList.get(i);
-            System.out.println("Bird " + i
+            System.out.println(("Bird " + i
                     + "Name : " + bird.getName()
                     + ", Bird type: " + bird.getType()
-                    + ", Characteristics: " + bird.g
+                    + ", Characteristics: " + bird.getSharedChar()
                     + ",Number of Wings:" + bird.getWingNum()
                     + ", Favorite food to eat: " + bird.getFavFood();
         }
+        return sign;
     }
 
     @Override

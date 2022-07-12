@@ -4,7 +4,7 @@ abstract class AbstractBird implements BirdInterface {
     protected AviaryTypes aviaryTypes;
     protected BirdType birdType;
     protected String name;
-
+    protected String sharedChar;
     protected boolean isExtinct;
     protected int wingNum;
     protected Food[] favFood;
@@ -32,6 +32,10 @@ abstract class AbstractBird implements BirdInterface {
     @Override
     public Food[] getFavFood() {
         return favFood;
+    }
+
+    public String getSharedChar(){
+        return this.sharedChar;
     }
 
 }
