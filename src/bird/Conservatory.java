@@ -179,8 +179,35 @@ public class Conservatory implements ConservatoryInterface{
     }
 
     @Override
-    public int guestLookUp(String name) {
-        return 0;
+    public String guestLookUp(String birdType) {
+        String lookUp = "";
+        ArrayList<String> birdFound = new ArrayList<>();
+        for (int i = 0; i < this.aviaryCount; i++){
+            Aviary currAviary = this.aviaryList.get(i);
+            for(int j = 0; j < currAviary.getSize(); j++){
+                AbstractBird currBird = currAviary.birdList.get(j);
+                if (currBird.getType() == birdType.toUpperCase()){
+                    if(!birdFound.contains(currAviary.getAviaryName())){
+                        birdFound.add(currAviary.getAviaryName());
+                    }
+                }
+            }
+        }
+        if (birdFound.size() == 0){
+            return "This bird does not exist in the conservatory";
+        }
+        else{
+            if (birdFound.size() > 1){
+                lookUp += birdType + "was found in this aviary:\n";
+            }
+            else{
+                lookUp += birdType + "was found in these aviaries:\n";
+            }
+            for(int i = 0; i < birdFound.size(); i++){
+                lookUp += birdFound.get(i) + "\n";
+            }
+        }
+        return lookUp;
     }
 
 
