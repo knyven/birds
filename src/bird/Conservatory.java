@@ -77,6 +77,26 @@ public class Conservatory implements ConservatoryInterface{
         return this;
     }
 
+    public Conservatory addAviaryName(String newName, int aviaryIndex) {
+        if (this.aviaryList.get(aviaryIndex) == null) {
+            return this;
+        }
+        aviaryList.get(aviaryIndex).setAviaryName(newName);
+        return this;
+        }
+
+
+    public Conservatory addAviaryLocation(String newName, String aviaryLocation, int aviaryIndex) {
+
+        if (this.aviaryList.get(aviaryIndex) == null) {
+            return this;
+        } else {
+            aviaryList.get(aviaryIndex).setAviaryLocation(aviaryLocation);
+            aviaryList.get(aviaryIndex).setAviaryName(newName);
+            return this;
+        }
+    }
+
 
     public String calculateFood() {
         Food[] listOfFood = {
@@ -149,11 +169,13 @@ public class Conservatory implements ConservatoryInterface{
 
     public void printMap() {
         String map = "Conservatory contains: ";
-        for (Aviary currentAviary : this.aviaryList) {
+        for (int i = 0; i < this.aviaryList.size(); i++) {
             // loop over individual aviary list containing up to 5 bird objects
-            System.out.println(currentAviary.printAviary());
+            System.out.println("Index ============ " + i);
+            System.out.println(this.aviaryList.get(i).printAviary());
         }
     }
+
 
     public String printIndex() {
         ArrayList<String> birdIndex = new ArrayList<>();
@@ -187,14 +209,35 @@ public class Conservatory implements ConservatoryInterface{
         return sign;
     }
 
-    public StringBuilder guestLookUp(String birdType){
+    public StringBuilder guestLookUpName(String birdName){
+        String name = birdName.toUpperCase();
+        StringBuilder returnLocation = new StringBuilder();
+        for(Aviary currAviary : this.aviaryList) {
+            for (int i = 0; i < currAviary.getSize(); i++) {
+                AbstractBird currBird = currAviary.birdList.get(i);
+                if (name.equals(currBird.birdType.toString())) {
+                    returnLocation.append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").append("Aviary Location: ").append(currAviary.getAviaryLocation()).
+                            append("\n").append("Aviary Type: ").append(currAviary.getAviaryType()).append("\n").append("Bird: ").append(currBird.getType()).append("\n").
+                            append("Favorite food to eat: ").append(Arrays.toString(currBird.getFavFood())).append("\n\n");
+                }
+            }
+        }
+        if(returnLocation.toString().equals("")){
+            return new StringBuilder("Bird not found");
+        } else {
+            return returnLocation;
+        }
+    }
+    public StringBuilder guestLookUpType(String birdType){
         String name = birdType.toUpperCase();
         StringBuilder returnLocation = new StringBuilder();
         for(Aviary currAviary : this.aviaryList) {
             for (int i = 0; i < currAviary.getSize(); i++) {
                 AbstractBird currBird = currAviary.birdList.get(i);
                 if (name.equals(currBird.birdType.toString())) {
-                    returnLocation.append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").append("Aviary Location: ").append(currAviary.getAviaryLocation()).append("\n").append("Aviary Type: ").append(currAviary.getAviaryType()).append("\n").append("Bird: ").append(currBird.getType()).append("\n").append("Favorite food to eat: ").append(Arrays.toString(currBird.getFavFood())).append("\n\n");
+                    returnLocation.append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").append("Aviary Location: ").append(currAviary.getAviaryLocation()).
+                            append("\n").append("Aviary Type: ").append(currAviary.getAviaryType()).append("\n").append("Bird: ").append(currBird.getType()).append("\n").
+                            append("Favorite food to eat: ").append(Arrays.toString(currBird.getFavFood())).append("\n\n");
                 }
             }
         }

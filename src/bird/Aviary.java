@@ -63,10 +63,13 @@ public class Aviary implements AviaryInterface {
     // printAviary prints out all the current birdTypes in the arraylist of the Aviary
     //
     public String printAviary() {
-        StringBuilder birds = new StringBuilder("Current aviary is a :");
-        birds.append(this.aviaryTypes).append(" aviary\n").append("It is located at: ").append(this.aviaryLocation).append("\n");
+
+        StringBuilder birds = new StringBuilder("Name ============= ");
+        birds.append(this.getAviaryName()).append("\n").append("Type ============= ").append(this.getAviaryType()).append("\n")
+                .append("Location ========= ").append(this.aviaryLocation).append("\n");
         for(int i = 0; i < this.birdNum; i++) {
-            birds.append(this.birdList.get(i).getName()).append(" : ").append(this.birdList.get(i).getType()).append("\n");
+            birds.append(this.birdList.get(i).getName()).append(" : ").
+                    append(this.birdList.get(i).getType()).append("\n");
         }
         return birds.toString();
     }
@@ -92,6 +95,14 @@ public class Aviary implements AviaryInterface {
                     && !(object instanceof FlightlessBirds);
         };
         return compatible;
+    }
+
+    public void setAviaryName(String aviaryName) {
+        this.aviaryName = aviaryName;
+    }
+
+    public void setAviaryLocation(String aviaryLocation) {
+        this.aviaryLocation = aviaryLocation;
     }
 
     public int getBirdNum() {
