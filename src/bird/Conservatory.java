@@ -79,7 +79,8 @@ public class Conservatory implements ConservatoryInterface{
 
 
     public String calculateFood() {
-        Food[] listOfFood = {Food.BERRIES,
+        Food[] listOfFood = {
+                Food.BERRIES,
                 Food.SEEDS,
                 Food.FRUIT,
                 Food.INSECTS,
@@ -94,44 +95,46 @@ public class Conservatory implements ConservatoryInterface{
                 Food.VEGETATION
         };
         //set counter for all 13 foods
-        int[] foodCounter = {0,0,0,0,0,0,0,0,0,0,0,0,0};
+        int[] foodCounter = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         int sizeOfFood = 13;
         //access each aviary
-        for(int i = 0; i < this.aviaryCount; i++){
-            Aviary currAviary = this.aviaryList.get(i);
-            //access the birds in each aviary
-            for(int j = 0; j < currAviary.getSize(); j++){
-                AbstractBird currBird = currAviary.birdList.get(j);
+        ArrayList<String> birdIndex = new ArrayList<>();
+        for(Aviary currAviary : this.aviaryList) {
+            for(int i = 0; i <currAviary.getSize(); i++) {
+                AbstractBird currBird = currAviary.birdList.get(i);
                 //if birds fav found is found in listofFood add 1 to the corresponding index in foodCounter
-                for(int f = 0; f < sizeOfFood; f++){
-                    if(currBird.getFavFood().equals(listOfFood[f])){
-                        foodCounter[f]++;
-                    }
+                for (int f = 0; f < sizeOfFood; f++) {
+                        {
+                            for(int z = 0; z < currBird.favFood.length; z++)
+                                if (currBird.favFood[z].equals(listOfFood[z]))
+                                    foodCounter[z]++;
+                        }
                 }
             }
         }
-        //output food counts along with birds
-        String str = "Food types \t\t\t\t Number of Birds";
-        for(int i = 0; i < sizeOfFood; i++){
-            if(foodCounter[i] > 0){
-                if(listOfFood[i].toString().length() < 10){
-                    str += listOfFood[i] + "\t\t\t\t" + foodCounter[i] + "\n";
-                }else {
-                    switch (listOfFood[i]) {
-                        case VEGETATION, OTHERBIRDS:
-                            str += listOfFood[i].toString() + "\t\t\t\t" + foodCounter[i] + "\n";
-                            break;
-                        case SMALLMAMMALS:
-                            str += listOfFood[i].toString() + "\t\t\t" + foodCounter[i] + "\n";
-                            break;
-                        case AQUATICINVERTABRATES:
-                            str += listOfFood[i].toString() + "\t" + foodCounter[i] + "\n";
-                            break;
+            //output food counts along with birds
+            String str = "Food types \t\t\t\t Number of Birds";
+            for (int i = 0; i < sizeOfFood; i++) {
+                if (foodCounter[i] > 0) {
+                    if (listOfFood[i].toString().length() < 10) {
+                        str += listOfFood[i] + "\t\t\t\t" + foodCounter[i] + "\n";
+                    } else {
+                        switch (listOfFood[i]) {
+                            case VEGETATION, OTHERBIRDS:
+                                str += listOfFood[i].toString() + "\t\t\t\t" + foodCounter[i] + "\n";
+                                break;
+                            case SMALLMAMMALS:
+                                str += listOfFood[i].toString() + "\t\t\t" + foodCounter[i] + "\n";
+                                break;
+                            case AQUATICINVERTABRATES:
+                                str += listOfFood[i].toString() + "\t" + foodCounter[i] + "\n";
+                                break;
+                        }
                     }
                 }
             }
-        }
-        return str;
+            return str;
+
     }
 
 
