@@ -1,5 +1,5 @@
 package bird;
-
+//Enum list of all the different bird foods
 public enum Food {
 
     BERRIES,

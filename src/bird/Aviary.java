@@ -30,11 +30,11 @@ public class Aviary implements AviaryInterface {
         return this.aviaryName;
     }
 
-    public String setAviaryName(){
+    public void setAviaryName(){
         this.aviaryName = aviaryName;
     }
 
-    public String setAviaryLocation(){
+    public void setAviaryLocation(){
         this.aviaryLocation = aviaryLocation;
     }
 
