@@ -1,10 +1,8 @@
 package bird;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Conservatory implements ConservatoryInterface{
     private int aviaryCount;   // num of aviaries in the conservatory
@@ -132,10 +130,9 @@ public class Conservatory implements ConservatoryInterface{
                 }
             }
             return str;
-
     }
 
-    public Map<String, Long> calcFood() {
+    public void calcFood() {
         ArrayList<String> food = new ArrayList<>();
         for (Aviary currAviary : this.aviaryList) {
             for (int i = 0; i < currAviary.getSize(); i++) {
@@ -143,9 +140,14 @@ public class Conservatory implements ConservatoryInterface{
                 food.add(Arrays.toString(currBird.getFavFood()));
             }
         }
+        //TODO we can flatten the list here and get the output to be each individual food item
         Map<String, Long> counts = food.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-        return counts;
+        System.out.println("For the conservatory we will need: \n");
+        for(Map.Entry<String, Long> entry : counts.entrySet()){
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
     }
+
     public void printMap() {
         String map = "Conservatory contains: ";
         for (Aviary currentAviary : this.aviaryList) {

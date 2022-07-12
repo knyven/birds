@@ -30,7 +30,7 @@ public class ConservatoryTest {
         cons1.printMap();
         //System.out.println(cons1.calculateFood());
         //System.out.println(cons1.printIndex());
-        System.out.println(cons1.calcFood());
+        cons1.calcFood();
 
 
 

@@ -8,7 +8,7 @@ public class Kiwis extends FlightlessBirds{
         this.birdType = BirdType.KIWI;
         this.isExtinct = false;
         this.wingNum = 2;
-        this.favFood = new Food[] {Food.VEGETATION, Food.INSECTS};
+        this.favFood = new Food[] {Food.VEGETATION, Food.INSECTS, Food.LARVAE};
     }
 
 
