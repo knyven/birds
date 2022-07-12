@@ -152,11 +152,11 @@ public class Conservatory implements ConservatoryInterface{
             }
         }
         Collections.sort(birdIndex);
-        String index = "Index of all birds in conservatory: \n";
-        for(int i = 0; i <birdIndex.size(); i++) {
-            index += birdIndex.get(i);
+        StringBuilder index = new StringBuilder("Index of all birds in conservatory: \n");
+        for (String s : birdIndex) {
+            index.append(s);
         }
-        return index;
+        return index.toString();
     }
 
 
