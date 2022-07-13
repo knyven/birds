@@ -6,40 +6,124 @@ import static org.junit.Assert.*;
 
 public class ConservatoryTest {
 
+    @Test // test rescuing one bird
+    public void testRescueBirdOne() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        conservatory1.rescueBird(hawk1);
+        assertEquals(1, conservatory1.getAviaryCount());
+    }
+    @Test // test rescuing no birds into aviary
+    public void testRescueBirdNone() {
+        Conservatory conservatory1 = new Conservatory();
+        assertEquals(0, conservatory1.getAviaryCount());
+    }
+    @Test // test rescuing 90 birds
+    public void testRescueBirdNinety() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 90; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
+        assertEquals(15, conservatory1.getAviaryCount());
+    }
+    @Test (expected = IllegalStateException.class)// test rescuing too many birds
+    public void testRescueBirdTooMany() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 1500; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
+        assertEquals("Conservatory is full", conservatory1.getAviaryCount());
+
+    }
+    @Test // testing output for food calculation for one bird
+    public void testCalculateFoodNinety() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 90; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
+        String expected = String.valueOf(conservatory1.calculateFood());
+        assertEquals(expected, "[SMALLMAMMALS, INSECTS] = 90");
+
+    }
+
+    @Test // testing output for food calculation for one bird
+    public void testCalculateFoodSixty() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 60; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
+        String expected = String.valueOf(conservatory1.calculateFood());
+        assertEquals(expected, "[SMALLMAMMALS, INSECTS] = 60");
+
+    }
+
+    @Test // testing output for food calculation for one bird
+    public void testCalculateFood() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        conservatory1.rescueBird(hawk1);
+        String expected = String.valueOf(conservatory1.calculateFood());
+        assertEquals(expected, "[SMALLMAMMALS, INSECTS] = 1");
+    }
+
     @Test
-    public void addBird() {
-
-        Conservatory cons = new Conservatory();
-        Conservatory cons1 = new Conservatory();
-
-        Hawk x = new Hawk("Tommy");
-        Hawk y = new Hawk("Sam");
-        Kiwis u = new Kiwis("Nathan");
-        Cockatoo z = new Cockatoo("John", 20, "Hello");
-        cons.rescueBird(x);
-
-
-        for(int i = 0; i < 20; i++) {
-            cons1.rescueBird(x);
-            //cons1.rescueBird(y);
-            //cons1.rescueBird(z);
-            //cons1.rescueBird(u);
+    public void printMap() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 1; i++)
+        {
+            conservatory1.rescueBird(hawk1);
         }
 
-        Swan swanny = new Swan("Swanny");
+    }
 
-        cons1.rescueBird(swanny);
-        System.out.println(cons1.guestLookUpType("HAWK"));
-        //cons1.addAviaryName("First aviary everrrr", 1);
+    @Test
+    public void printIndex() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 1; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
+        String actual = conservatory1.printIndex();
+        assertEquals("Index of all birds in conservatory: \nTommy========Temp name\n", actual);
+    }
 
-        //cons1.addAviaryLocation("Hawk aviary", "Far side of the conservatory", 2);
+    @Test
+    public void printSign() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 60; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
+    }
 
-        //cons1.printMap();
-        //System.out.println(cons1.calculateFood());
-        //System.out.println(cons1.printIndex());
-        cons1.calcFood();
+    @Test
+    public void guestLookUpName() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 60; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
+    }
 
-
-
+    @Test
+    public void guestLookUpType() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Tommy");
+        for(int i = 0; i < 60; i++)
+        {
+            conservatory1.rescueBird(hawk1);
+        }
     }
 }
