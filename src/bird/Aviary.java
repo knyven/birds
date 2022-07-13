@@ -3,8 +3,13 @@ package bird;
 import java.util.ArrayList;
 //====================================================================================================================//
 //                                                                                                                    //
-//      Aviary class to be used to store bird objects                                                                 //
+//      Aviary class to be used to store AbtractBird Child class objects                                              //
 //      ------------------------------------------------                                                              //
+//                                                                                                                    //
+//       Ideal use case:                                                                                              //
+//       Step 1: Create an aviary using the constructor                                                               //
+//       Step 2: Create a bird object using one of the child classes in the bird package.                             //
+//       Step 3: Add the bird to the aviary by calling addBird(object) on the aviary you created in step 1.           //
 //                                                                                                                    //
 //====================================================================================================================//
 public class Aviary implements AviaryInterface {

@@ -8,6 +8,24 @@ import java.util.stream.Collectors;
 //      Conservatory class to be used to store Aviary class objects                                                   //
 //      ------------------------------------------------                                                              //
 //                                                                                                                    //
+//       Ideal use case:                                                                                              //
+//       Step 1: Create a conservatory with the constructor.                                                          //
+//       Step 2: Create a bird object using one of the child classes in the bird package.                             //
+//       Step 3: Create an aviary using the Aviary class constructor                                                  //
+//       Step 4: Use addBird(Bird) on the aviary to add the bird object into the aviary.                              //
+//       Step 5: Use the addAviary(aviary) method on the Conservatory object created in step 1 to add the aviary.     //
+//                                                                                                                    //
+//       Automatic Adding with rescue bird:                                                                           //
+//       Step 1: Create conservatory object with the constructor.                                                     //
+//       Step 2: Create a bird object using one of the child classes in the bird package.                             //
+//       Step 3: Use rescueBird on Conservatory to add the Bird object into the conservatory                          //
+//                                                                                                                    //
+//       Note: This initializes the conservatory with a temporary name and location attribute.                        //
+//        To change this access this print out the location using printMap on the Aviary. Make note                   //
+//        of the index and call either the addAviaryName(changes name only) or addAviaryLocation(changes              //
+//        both the name and location of the selected aviary) on the conservatory and pass the index of                //
+//        aviary you would like to change.                                                                            //
+//                                                                                                                    //
 //====================================================================================================================//
 public class Conservatory implements ConservatoryInterface {
     private int aviaryCount;   // num of aviaries in the conservatory
@@ -78,7 +96,7 @@ public class Conservatory implements ConservatoryInterface {
     //
     public Conservatory addAviary(Aviary object) {
         if (this.conservatoryFull()) {
-            throw new IllegalStateException("Aviary is full!");
+            throw new IllegalStateException("Conservatory is full");
         } else {
             this.aviaryList.add(object);
             this.aviaryCount++;
