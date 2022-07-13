@@ -66,8 +66,9 @@ public class ConservatoryTest {
         for (int i = 0; i < 90; i++) {
             conservatory1.rescueBird(hawk1);
         }
-        String expected = String.valueOf(conservatory1.calculateFood());
-        assertEquals(expected, "[SMALLMAMMALS, INSECTS] = 90");
+        String expected = "SMALLMAMMALS = 90\n" +
+                "INSECTS = 90\n";
+        assertEquals(expected, conservatory1.calculateFood().toString());
 
     }
 
@@ -78,8 +79,9 @@ public class ConservatoryTest {
         for (int i = 0; i < 60; i++) {
             conservatory1.rescueBird(hawk1);
         }
-        String expected = String.valueOf(conservatory1.calculateFood());
-        assertEquals(expected, "[SMALLMAMMALS, INSECTS] = 60");
+        String expected = "SMALLMAMMALS = 60\n" +
+                "INSECTS = 60\n";
+        assertEquals(expected, conservatory1.calculateFood().toString());
 
     }
 
@@ -118,9 +120,9 @@ public class ConservatoryTest {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Jenny");
         conservatory1.rescueBird(hawk1);
-        System.out.println(conservatory1.calculateFood());
-        String expected = String.valueOf(conservatory1.calculateFood());
-        //assertEquals(expected, "[SMALLMAMMALS, INSECTS] = 1");
+        String expected = "SMALLMAMMALS = 1\n" +
+                "INSECTS = 1\n";
+        assertEquals(expected, conservatory1.calculateFood().toString());
     }
 
     @Test
@@ -130,6 +132,7 @@ public class ConservatoryTest {
         for (int i = 0; i < 1; i++) {
             conservatory1.rescueBird(hawk1);
         }
+        conservatory1.printMap();
 
     }
 
@@ -189,7 +192,7 @@ public class ConservatoryTest {
                 Bird: HAWK
                 Favorite food to eat: [SMALLMAMMALS, INSECTS]\n\n""";
 
-        assertEquals(conservatory1.guestLookUpType("Olga").toString(), actual);
+        assertEquals(conservatory1.guestLookUpType("Hawk").toString(), actual);
     }
 
 
