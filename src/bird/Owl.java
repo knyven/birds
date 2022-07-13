@@ -8,7 +8,7 @@ public class Owl extends AbstractBird {
         this.name = name;
         this.birdType = BirdType.OWL;
         this.aviaryTypes = AviaryTypes.PREY;
-        this.sharedChar = "sharp hooked beaks and visible nostrils"
+        this.sharedChar = "sharp hooked beaks and visible nostrils";
         this.isExtinct = false;
         this.wingNum = 2;
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.OTHERBIRDS, Food.INSECTS};
