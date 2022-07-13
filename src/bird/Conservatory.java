@@ -200,7 +200,8 @@ public class Conservatory implements ConservatoryInterface {
             for (int i = 0; i < currAviary.getSize(); i++) {
                 AbstractBird currBird = currAviary.birdList.get(i);
                 if (name.equals(currBird.getName().toUpperCase())) {
-                    returnLocation.append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").
+                    returnLocation.append("Aviary index: ").append(i).append("\n")
+                            .append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").
                             append("Aviary Location: ").append(currAviary.getAviaryLocation()).append("\n").
                             append("Aviary Type: ").append(currAviary.getAviaryType()).append("\n").
                             append("Bird: ").append(currBird.getType()).append("\n").
@@ -225,7 +226,8 @@ public class Conservatory implements ConservatoryInterface {
             for (int i = 0; i < currAviary.getSize(); i++) {
                 AbstractBird currBird = currAviary.birdList.get(i);
                 if (name.equals(currBird.birdType.toString())) {
-                    returnLocation.append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").
+                    returnLocation.append("Aviary index: ").append(i).append("\n").
+                            append("Aviary Name: ").append(currAviary.getAviaryName()).append("\n").
                             append("Aviary Location: ").append(currAviary.getAviaryLocation()).append("\n").
                             append("Aviary Type: ").append(currAviary.getAviaryType()).append("\n").
                             append("Bird: ").append(currBird.getType()).append("\n").

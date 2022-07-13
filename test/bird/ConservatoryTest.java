@@ -38,7 +38,7 @@ public class ConservatoryTest {
         }
         assertEquals(20, conservatory1.getAviaryCount());
     }
-    @Test(expected = IllegalStateException.class) // test rescuing 101
+    @Test(expected = IllegalStateException.class) // test rescuing 101 birds
     public void testRescueBird101() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Tommy");
@@ -117,7 +117,6 @@ public class ConservatoryTest {
                         INSECTS = 60
                         VEGETATION = 36
                         """;
-
         assertEquals(expected, conservatory1.calculateFood().toString());
     }
 
@@ -133,7 +132,7 @@ public class ConservatoryTest {
         assertEquals(expected, conservatory1.calculateFood().toString());
     }
 
-    @Test
+    @Test // test printing the map and compare to String value of expected output
     public void testPrintMap() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Colby");
@@ -154,7 +153,7 @@ public class ConservatoryTest {
         //System.out.println(conservatory1.printMap());
     }
 
-    @Test
+    @Test // test Print index and compare it to the String value of the expected output
     public void testPrintIndex() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("John");
@@ -165,7 +164,7 @@ public class ConservatoryTest {
         assertEquals("Index of all birds in conservatory: \nJohn========Temp name\n", actual);
     }
 
-    @Test
+    @Test // test print sign and compare it to the string value of the expected output
     public void testPrintSign() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Tommy");
@@ -179,7 +178,7 @@ public class ConservatoryTest {
 
     }
 
-    @Test
+    @Test // test looking up a guest (bird object) by name attribute
     public void testGuestLookUpName() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Jackson");
@@ -187,6 +186,7 @@ public class ConservatoryTest {
             conservatory1.rescueBird(hawk1);
         }
         String actual = """
+                Aviary index: 0
                 Aviary Name: Temp name
                 Aviary Location: Temp location
                 Aviary Type: PREY
@@ -198,7 +198,7 @@ public class ConservatoryTest {
         assertEquals(conservatory1.guestLookUpName("Jackson").toString(), actual);
     }
 
-    @Test
+    @Test // Test searching for guest (bird object) by type attribute
     public void testGuestLookUpType() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Olga");
@@ -206,6 +206,7 @@ public class ConservatoryTest {
             conservatory1.rescueBird(hawk1);
         }
         String actual = """
+                Aviary index: 0
                 Aviary Name: Temp name
                 Aviary Location: Temp location
                 Aviary Type: PREY
@@ -217,8 +218,7 @@ public class ConservatoryTest {
         assertEquals(conservatory1.guestLookUpType("Hawk").toString(), actual);
     }
 
-
-    @Test
+    @Test // testing addAviary location and reading the aviary name after change
     public void testAddAviaryLocation() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Lincoln");
@@ -228,7 +228,7 @@ public class ConservatoryTest {
         String actual = "Hawk Aviary";
         assertEquals(conservatory1.getAviaryList(0).getAviaryName(), actual);
     }
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class) // testing addAviaryLocation wrong index
     public void testAddAviaryLocationWrongIndex() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Lincoln");
@@ -240,7 +240,7 @@ public class ConservatoryTest {
     }
 
 
-    @Test
+    @Test // testing add aviary location and name
     public void testAddAviaryNameLocation() {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Ben");
