@@ -168,9 +168,12 @@ public class AviaryTest {
         prey.addBird(hawk1);
         prey.addBird(hawk2);
 
-        assertEquals("Name ============= preybirds\n" +
-                "Type ============= PREY\n" +
-                "Location ========= 1st floor\n" +
+        assertEquals("Name of Aviary ============= preybirds\n" +
+                "Type of Aviary ============= PREY\n" +
+                "Location of Aviary========= 1st floor\n" +
+                "\n" +
+                "Name   : Type\n" +
+                "\n" +
                 "Doge1 : EAGLE\n" +
                 "Doge3 : EAGLE\n" +
                 "Doge5 : EAGLE\n" +
