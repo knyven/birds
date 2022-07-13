@@ -1,5 +1,10 @@
 package bird;
-
+//====================================================================================================================//
+//                                                                                                                    //
+//      AbstractBird class to be used for creation of birds to add into aviaries                                      //
+//      ------------------------------------------------                                                              //
+//                                                                                                                    //
+//====================================================================================================================//
 abstract class AbstractBird implements BirdInterface {
     protected AviaryTypes aviaryTypes;
     protected BirdType birdType;
