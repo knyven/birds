@@ -6,13 +6,13 @@ public interface ConservatoryInterface {
 
 
     Conservatory addAviary(Aviary object);  // creates new aviary to house added birds if an aviary does not exist
-    StringBuilder calculateFood();
+    StringBuilder calculateFood(); //prints out food quantities for birds in the conservatory
     void printMap();
-    String printIndex();
-    String printSign(int indexOfAviary);
+    String printIndex(); //prints index of aviaries
+    String printSign(int indexOfAviary); //prints out specific aviary signs and takes in the index of aviary to print
     StringBuilder guestLookUpType(String birdType);        // returns which aviary and other info about bird
-    StringBuilder guestLookUpName(String name);
-    boolean conservatoryFull();
-    boolean conservatoryEmpty();
+    StringBuilder guestLookUpName(String name); //returns info of aviary the name of the bird is in
+    boolean conservatoryFull(); //checks if conservatory is full at 20 aviaries
+    boolean conservatoryEmpty(); //checks if conservatory is empty
 
 }
