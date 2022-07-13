@@ -25,16 +25,4 @@ public class Emus extends FlightlessBirds{
         return this.sharedChar;
     }
 
-    @Override
-    public String toString() {
-        return "Emus{" +
-                "sharedChar='" + this.sharedChar + '\'' +
-                ", aviaryTypes=" + this.aviaryTypes +
-                ", birdType=" + this.birdType +
-                ", name='" + this.name + '\'' +
-                ", isExtinct=" + this.isExtinct +
-                ", wingNum=" + this.wingNum +
-                ", favFood=" + Arrays.toString(this.favFood) +
-                '}';
-    }
 }

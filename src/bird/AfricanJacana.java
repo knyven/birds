@@ -29,18 +29,5 @@ public class AfricanJacana extends WaterBird{
         return this.sharedChar;
     }
 
-    @Override
-    public String toString() {
-        return "AfricanJacana{" +
-                "nameOfWater='" + nameOfWater + '\'' +
-                ", sharedChar='" + sharedChar + '\'' +
-                ", aviaryTypes=" + aviaryTypes +
-                ", birdType=" + birdType +
-                ", name='" + name + '\'' +
-                ", sharedChar='" + sharedChar + '\'' +
-                ", isExtinct=" + isExtinct +
-                ", wingNum=" + wingNum +
-                ", favFood=" + Arrays.toString(favFood) +
-                '}';
-    }
+
 }

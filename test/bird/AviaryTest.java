@@ -173,7 +173,6 @@ public class AviaryTest {
                 "Location of Aviary========= 1st floor\n" +
                 "\n" +
                 "Name   : Type\n" +
-                "\n" +
                 "Doge1 : EAGLE\n" +
                 "Doge3 : EAGLE\n" +
                 "Doge5 : EAGLE\n" +

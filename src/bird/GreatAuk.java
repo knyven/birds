@@ -25,17 +25,4 @@ public class GreatAuk extends WaterBird{
         return this.sharedChar;
     }
 
-    @Override
-    public String toString() {
-        return "GreatAuk{" +
-                "nameOfWater='" + this.nameOfWater + '\'' +
-                ", sharedChar='" + this.sharedChar + '\'' +
-                ", aviaryTypes=" + this.aviaryTypes +
-                ", birdType=" + this.birdType +
-                ", name='" + this.name + '\'' +
-                ", isExtinct=" + this.isExtinct +
-                ", wingNum=" + this.wingNum +
-                ", favFood=" + Arrays.toString(this.favFood) +
-                '}';
-    }
 }
