@@ -26,6 +26,8 @@ abstract class Parrot extends AbstractBird {
         return this.favFood;
     }
 
+    abstract String getSharedChar();
+
 
 }
 

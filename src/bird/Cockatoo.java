@@ -21,6 +21,10 @@ public class Cockatoo extends Parrot {
         this.favFood = new Food[]{Food.SEEDS, Food.INSECTS};
     }
 
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 
     @Override
     public String toString() {

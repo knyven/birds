@@ -10,4 +10,7 @@ public class Swan extends WaterBird {
         this.favFood = new Food[] {Food.VEGETATION, Food.FRUIT, Food.INSECTS};
         this.nameOfWater = "freshwater ponds";
     }
+
+    @Override
+
 }

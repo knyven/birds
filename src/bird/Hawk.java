@@ -11,7 +11,7 @@ public class Hawk extends PreyBird{
         this.isExtinct = false;
         this.wingNum = 2;
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.INSECTS};
-        this.salientChar = "hawks can see in color";
+        this.sharedChar = "hawks can see in color";
     }
 
 
@@ -29,4 +29,8 @@ public class Hawk extends PreyBird{
     }
 
 
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 }

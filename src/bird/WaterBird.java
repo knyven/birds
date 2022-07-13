@@ -2,8 +2,7 @@ package bird;
 
 abstract class WaterBird extends AbstractBird{
     protected String nameOfWater;
-    private String sharedChar = "These birds are often found near bodies of water, such as freshwater " +
-            "or the ocean.";
+    protected String sharedChar = "These birds are often found near bodies of water, such as freshwater or the ocean.";
 
     String getNameOfWater(){
         return this.nameOfWater;
@@ -14,6 +13,8 @@ abstract class WaterBird extends AbstractBird{
 
         return this.favFood;
     }
+
+    abstract String getSharedChar();
 
 
 

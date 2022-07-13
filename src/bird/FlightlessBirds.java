@@ -15,4 +15,6 @@ abstract class FlightlessBirds extends AbstractBird{
         return this.favFood;
     }
 
+    abstract String getSharedChar();
+
 }

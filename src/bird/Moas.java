@@ -1,9 +1,6 @@
 package bird;
 
 public class Moas extends FlightlessBirds{
-    //AviaryTypes aviaryGroups;
-
-    //public BirdType birdType;
 
     public Moas(String name){
         this.name = name;

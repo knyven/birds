@@ -35,8 +35,7 @@ abstract class AbstractBird implements BirdInterface {
         return this.favFood;
     }
     //get shared characteristics of bird groups: flightless, prey bird, parrots, owls, waterbirds
-    public String getSharedChar(){
-        return this.sharedChar;
-    }
+    abstract String getSharedChar();
+
 
 }

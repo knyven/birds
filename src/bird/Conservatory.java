@@ -2,6 +2,7 @@ package bird;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Conservatory implements ConservatoryInterface{
     private int aviaryCount;   // num of aviaries in the conservatory
@@ -161,6 +162,7 @@ public class Conservatory implements ConservatoryInterface{
         }
         //TODO we can flatten the list here and get the output to be each individual food item
         Map<String, Long> counts = food.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+
         System.out.println("For the conservatory we will need: \n");
         for(Map.Entry<String, Long> entry : counts.entrySet()){
             System.out.println(entry.getKey() + " = " + entry.getValue());

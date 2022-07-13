@@ -3,7 +3,7 @@ package bird;
 abstract class PreyBird extends AbstractBird{
 
     protected String salientChar;
-    static String sharedChar = "sharp hooked beaks and visible nostrils";
+    public String sharedChar = "sharp hooked beaks and visible nostrils";
 
 
     public String getChar(){
@@ -16,5 +16,7 @@ abstract class PreyBird extends AbstractBird{
 
         return this.favFood;
     }
+
+    abstract String getSharedChar();
 
 }

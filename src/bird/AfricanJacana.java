@@ -17,4 +17,8 @@ public class AfricanJacana extends WaterBird{
         this.nameOfWater = "Lakes in Sub-Saharan Africa";
     }
 
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 }
