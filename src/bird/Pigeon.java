@@ -1,7 +1,12 @@
 package bird;
-
-import java.util.ArrayList;
-
+// Class: Pigeon
+// Creates a bird object Pigeon with the characteristics of a Pigeon.
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends AbstractBird and shares its methods.
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 public class Pigeon extends AbstractBird{
 
     public String salientChar;

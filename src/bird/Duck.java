@@ -1,8 +1,15 @@
 package bird;
 
 import java.util.Arrays;
-
-//Child class for Duck Bird that extends Water Bird type
+// Class: Duck
+// Creates a bird object Duck with the characteristics of a Duck
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends WaterBird and has sharedChar with all WaterBirds
+// Includes a nameOfWater attribute.
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 public class Duck extends WaterBird{
 
     public Duck(String name) {

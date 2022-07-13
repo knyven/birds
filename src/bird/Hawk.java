@@ -1,7 +1,14 @@
 package bird;
 
 import java.util.Arrays;
-
+// Class: Hawk
+// Creates a bird object Hawk with the characteristics of a Hawk.
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends PreyBird and has sharedChar with all WaterBirds
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 public class Hawk extends PreyBird{
 
     public Hawk(String name){

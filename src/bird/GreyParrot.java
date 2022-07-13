@@ -1,7 +1,14 @@
 package bird;
 
 import java.util.Arrays;
-
+// Class: GreyParrot
+// Creates a bird object GreyParrot with the characteristics of a GreyParrot.
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends Parrot and has sharedChar with all Parrots.
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 public class GreyParrot extends Parrot{
 
 

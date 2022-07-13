@@ -1,7 +1,14 @@
 package bird;
 
 import java.util.Arrays;
-//Child class for Eagle Bird that extends Prey Bird type
+// Class: Eagle
+// Creates a bird object Eagle with the characteristics of an Eagle.
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends PreyBird and has sharedChar with all WaterBirds
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 public class Eagle extends PreyBird {
 
 

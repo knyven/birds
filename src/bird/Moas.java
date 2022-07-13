@@ -1,5 +1,12 @@
 package bird;
-
+// Class: Moas
+// Creates a bird object Moas with the characteristics of a Moas.
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends FlightlesBirds and has sharedChar with all Flightless birds.
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 import java.util.Arrays;
 
 public class Moas extends FlightlessBirds{

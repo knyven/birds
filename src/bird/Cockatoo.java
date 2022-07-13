@@ -1,8 +1,16 @@
 package bird;
+// Class: Cockatoo
+// Creates a bird object Cockatoo with the characteristics of a Cockatoo.
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends Parrot and has sharedChar with all Parrots.
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 
 import java.util.Arrays;
 
-//Child class Cockatoo Bird that extends Parrot type
+
 public class Cockatoo extends Parrot {
 
 
