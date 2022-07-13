@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Pigeon extends AbstractBird{
 
-    public String salientChar;
+    public String sharedChar;
 
     public Pigeon(String name) {
         this.name = name;
@@ -12,12 +12,12 @@ public class Pigeon extends AbstractBird{
         this.aviaryTypes = AviaryTypes.OTHER;
         this.isExtinct = false;
         this.wingNum = 2;
-        this.salientChar = "Feed young bird milk";
+        this.sharedChar = "Feed young bird milk";
         this.favFood = new Food[] {Food.SEEDS, Food.INSECTS};
     }
 
     public String getChar(){
-        return "The specific traits are: " + salientChar;
+        return "The specific traits are: " + sharedChar;
     }
 
     @Override

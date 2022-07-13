@@ -1,7 +1,7 @@
 package bird;
 
 import static org.junit.Assert.*;
-import org.junit.Before;
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -32,6 +32,10 @@ public class AbstractBirdTest {
     public void testGetSharedChar() {
         assertEquals("sharp hooked beaks and visible nostrils", hawk1.getSharedChar());
         assertEquals("These birds are often found near bodies of water, such as freshwater or the ocean.", african1.getSharedChar());
+        assertEquals("sharp hooked beaks and visible nostrils", eagle1.getSharedChar());
+        assertEquals("Feed young bird milk", pigeon1.getSharedChar());
+        assertEquals("intelligent and mimic sounds and short, curved beak", gParrot.getSharedChar());
+        assertEquals("Lives on the ground and has underdeveloped wings or no wings", emu1.getSharedChar());
 
     }
 
@@ -54,6 +58,21 @@ public class AbstractBirdTest {
 
     @Test//testing getFood from all child classes using parent AbstractBird
     public void testFood(){
+        assertEquals(Arrays.toString(new String[]{String.valueOf(Food.SMALLMAMMALS), String.valueOf(Food.OTHERBIRDS), String.valueOf(Food.INSECTS)}), Arrays.toString(owl1.getFavFood()));
+        assertEquals(Arrays.toString(new String[]{String.valueOf(Food.SMALLMAMMALS), String.valueOf(Food.INSECTS)}), Arrays.toString(eagle1.getFavFood()));
+        assertEquals(Arrays.toString(new String[]{String.valueOf(Food.VEGETATION), String.valueOf(Food.FRUIT), String.valueOf(Food.SEEDS)}), Arrays.toString(moas1.getFavFood()));
+        assertEquals(Arrays.toString(new String[]{String.valueOf(Food.INSECTS), String.valueOf(Food.VEGETATION)}), Arrays.toString(emu1.getFavFood()));
+        assertEquals(Arrays.toString(new String[]{String.valueOf(Food.SMALLMAMMALS), String.valueOf(Food.INSECTS)}), Arrays.toString(hawk1.getFavFood()));
+        assertEquals(Arrays.toString(new String[]{String.valueOf(Food.SEEDS), String.valueOf(Food.INSECTS)}), Arrays.toString(pigeon1.getFavFood()));
+
+    }
+
+    @Test//testing getType from all child classes using parent AbstractBird
+    public void testGetTypes(){
+        assertEquals(BirdType.OWL.toString(), owl1.getType().toString());
+        assertEquals(BirdType.EAGLE.toString(), eagle1.getType().toString());
+        assertEquals(BirdType.GREYPARROT.toString(), gParrot.getType().toString());
+        assertEquals(BirdType.EMU.toString(), emu1.getType().toString());
 
     }
 

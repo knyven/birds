@@ -113,9 +113,6 @@ public class Aviary implements AviaryInterface {
         this.aviaryLocation = aviaryLocation;
     }
 
-    public int getBirdNum() {
-        return this.birdNum;
-    }
 }
 
 
