@@ -12,7 +12,7 @@ public class Pigeon extends AbstractBird{
         this.aviaryTypes = AviaryTypes.OTHER;
         this.isExtinct = false;
         this.wingNum = 2;
-        this.salientChar = "Feed young bird milk";
+        this.sharedChar = "Feed young bird milk";
         this.favFood = new Food[] {Food.SEEDS, Food.INSECTS};
     }
 

@@ -43,6 +43,10 @@ public class AbstractBirdTest {
     public void testIsExtinct(){
         assertFalse(hawk1.isExtinct());
         assertTrue(moas1.isExtinct());
+        assertFalse(hawk1.isExtinct());
+        assertFalse(emu1.isExtinct());
+        assertFalse(eagle1.isExtinct());
+
     }
 
     @Test//testing get number of wings from all child classes using parent AbstractBird
