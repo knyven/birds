@@ -1,7 +1,12 @@
 package bird;
-
-//Child class for AfricanJacana Bird that extends Water Bird type
-
+// Class: AfricanJacana
+// Creates a bird object AfricanJacana with the characteristics of an African Jacana.
+// Name is initialized to the String name passed in to the constructor.
+//
+// Extends WaterBird and has sharedChar with all WaterBirds
+//
+// This object may interact with the Aviary Class and be places into created aviaries.
+//====================================================================================================================//
 import java.util.Arrays;
 
 public class AfricanJacana extends WaterBird{
