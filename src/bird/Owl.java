@@ -1,5 +1,4 @@
 package bird;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Owl extends AbstractBird {
