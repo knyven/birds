@@ -14,7 +14,8 @@ import java.util.ArrayList;
 //====================================================================================================================//
 public class Aviary implements AviaryInterface {
 
-    public int birdNum;
+    protected int birdNum;
+    private static final int maxBirds = 5;
     protected String aviaryName;                                // name of the aviary
     protected AviaryTypes aviaryTypes;                          // type of aviary
     public ArrayList<AbstractBird> birdList;                 // list of birds stored in the aviary array
@@ -68,7 +69,7 @@ public class Aviary implements AviaryInterface {
                 .append("Name   : Type").append("\n");
         for (int i = 0; i < this.birdNum; i++) {
             birds.append(this.birdList.get(i).getName()).append(" : ").
-                    append(this.birdList.get(i).getType());
+                    append(this.birdList.get(i).getType()).append("\n");
         }
         return birds.toString();
     }
@@ -93,7 +94,7 @@ public class Aviary implements AviaryInterface {
     //  isFull return true if the aviary is full
     //
     public boolean isFull() {
-        return this.birdList.size() >= 5;
+        return this.getSize()>= maxBirds ;
     }
 //====================================================================================================================//
 //===========================================SETTERS==================================================================//

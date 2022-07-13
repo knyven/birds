@@ -21,18 +21,6 @@ public class Eagle extends PreyBird {
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.INSECTS};
     }
 
-    @Override
-    public String toString() {
-        return "Eagle{" +
-                "aviaryTypes=" + this.aviaryTypes +
-                ", birdType=" + this.birdType +
-                ", name='" + this.name + '\'' +
-                ", sharedChar='" + this.sharedChar + '\'' +
-                ", isExtinct=" + this.isExtinct +
-                ", wingNum=" + this.wingNum +
-                ", favFood=" + Arrays.toString(this.favFood) +
-                '}';
-    }
 
     @Override
     String getSharedChar() {

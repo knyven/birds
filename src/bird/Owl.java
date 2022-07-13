@@ -25,16 +25,4 @@ public class Owl extends AbstractBird {
         return this.sharedChar;
     }
 
-    @Override
-    public String toString() {
-        return "Owl{" +
-                "aviaryTypes=" + this.aviaryTypes +
-                ", birdType=" + this.birdType +
-                ", name='" + this.name + '\'' +
-                ", sharedChar='" + this.sharedChar + '\'' +
-                ", isExtinct=" + this.isExtinct +
-                ", wingNum=" + this.wingNum +
-                ", favFood=" + Arrays.toString(this.favFood) +
-                '}';
-    }
 }

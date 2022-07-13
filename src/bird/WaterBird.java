@@ -23,8 +23,4 @@ abstract class WaterBird extends AbstractBird{
     abstract String getSharedChar();
 
 
-
-
-
-
 }

@@ -16,7 +16,7 @@ public class Swan extends WaterBird {
         this.aviaryTypes = AviaryTypes.WATERFOWL;
         this.isExtinct = false;
         this.wingNum = 2;
-        this.favFood = new Food[] {Food.VEGETATION, Food.FRUIT, Food.INSECTS};
+        this.favFood = new Food[]{Food.VEGETATION, Food.FRUIT, Food.INSECTS};
         this.nameOfWater = "freshwater ponds";
     }
 
@@ -24,6 +24,8 @@ public class Swan extends WaterBird {
     String getSharedChar() {
         return this.sharedChar;
     }
+
+}
 
     @Override
     public String toString() {

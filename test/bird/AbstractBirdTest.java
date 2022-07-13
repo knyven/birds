@@ -81,4 +81,15 @@ public class AbstractBirdTest {
     }
 
 
+    @Test // test owl to String
+    public void testOwlToString(){
+        Owl owly = new Owl("Owly");
+        Eagle myeagle = new Eagle("myeagle");
+        //System.out.println(owly.toString());
+        System.out.println(myeagle.toString());
+        //assertEquals("hi", owly.toString());
+
+    }
+
+
 }

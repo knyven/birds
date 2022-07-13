@@ -1,4 +1,7 @@
 package bird;
+
+import java.util.Arrays;
+
 //====================================================================================================================//
 //                                                                                                                    //
 //      AbstractBird class to be used for creation of birds to add into aviaries                                      //
@@ -43,4 +46,15 @@ abstract class AbstractBird implements BirdInterface {
     abstract String getSharedChar();
 
 
+    @Override
+    public String toString() {
+        return  "aviaryTypes=" + this.aviaryTypes + "\n" +
+                "birdType=" + this.birdType + "\n" +
+                "name='" + this.name + '\'' + "\n" +
+                "sharedChar='" + this.getSharedChar() + '\'' + "\n" +
+                "isExtinct=" + this.isExtinct + "\n" +
+                "wingNum=" + this.wingNum + "\n" +
+                "favFood=" + Arrays.toString(this.favFood) + "\n" +
+                '}';
+    }
 }
