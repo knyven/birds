@@ -45,9 +45,14 @@ public class AviaryTest {
 
         ArrayList<AbstractBird> listOfAviary = preyAviary.getBirds();
         assertEquals(5, listOfAviary.size());
-        assertEquals("Hawk{aviaryTypes=PREY, birdType=HAWK, name='Doge4'," +
-                " sharedChar='sharp hooked beaks and visible nostrils', isExtinct=false, wingNum=2, " +
-                "favFood=[SMALLMAMMALS, INSECTS]}", listOfAviary.get(4).toString());
+        assertEquals("aviaryTypes=PREY\n" +
+                "birdType=HAWK\n" +
+                "name='Doge4'\n" +
+                "sharedChar='sharp hooked beaks and visible nostrils'\n" +
+                "isExtinct=false\n" +
+                "wingNum=2\n" +
+                "favFood=[SMALLMAMMALS, INSECTS]\n" +
+                "}", listOfAviary.get(4).toString());
 
 
     }

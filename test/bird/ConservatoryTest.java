@@ -139,16 +139,15 @@ public class ConservatoryTest {
         for (int i = 0; i < 1; i++) {
             conservatory1.rescueBird(hawk1);
         }
-        String actual = """
-                Conservatory contains:\s
-
-                Index ======================== 0
-                Name of Aviary ============= Temp name
-                Type of Aviary ============= PREY
-                Location of Aviary========= Temp location
-
-                Name   : Type
-                Colby : HAWK""";
+        String actual = "Conservatory contains: \n" +
+                "\n" +
+                "Index ======================== 0\n" +
+                "Name of Aviary ============= Temp name\n" +
+                "Type of Aviary ============= PREY\n" +
+                "Location of Aviary========= Temp location\n" +
+                "\n" +
+                "Name   : Type\n" +
+                "Colby : HAWK\n";
         assertEquals(conservatory1.printMap(), actual);
         //System.out.println(conservatory1.printMap());
     }
