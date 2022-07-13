@@ -1,5 +1,7 @@
 package bird;
 
+import java.util.Arrays;
+
 public class Moas extends FlightlessBirds{
 
     public Moas(String name){
@@ -14,5 +16,18 @@ public class Moas extends FlightlessBirds{
     @Override
     String getSharedChar() {
         return this.sharedChar;
+    }
+
+    @Override
+    public String toString() {
+        return "Moas{" +
+                "sharedChar='" + this.sharedChar + '\'' +
+                ", aviaryTypes=" + this.aviaryTypes +
+                ", birdType=" + this.birdType +
+                ", name='" + this.name + '\'' +
+                ", isExtinct=" + this.isExtinct +
+                ", wingNum=" + this.wingNum +
+                ", favFood=" + Arrays.toString(this.favFood) +
+                '}';
     }
 }

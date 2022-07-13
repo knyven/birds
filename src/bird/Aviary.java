@@ -55,12 +55,21 @@ public class Aviary implements AviaryInterface {
     //  the current bird is compatible with the aviary, and it is not full
     //
     public Aviary addBird(AbstractBird object) {
-        if(this.isFull()) {
+        if(object.isExtinct)
+        {
+            throw new IllegalStateException("Bird you are trying to add is extinct");
+        }
+        if(this.isFull())
+        {
             throw new IllegalStateException("Too many birds for the aviary"); // no room to add
-        } else {
+        }
+        else
+        {
             if(!this.isCompatible(object)) {
             throw new IllegalStateException("Wrong aviary for current bird");
-        } else {
+        }
+            else
+        {
                 this.birdList.add((AbstractBird) object);
                 this.birdNum ++;
                 return this;
