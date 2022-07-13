@@ -1,5 +1,7 @@
 package bird;
 
+import java.util.Arrays;
+
 public class GreatAuk extends WaterBird{
     public GreatAuk(String name) {
         this.name = name;
@@ -13,5 +15,19 @@ public class GreatAuk extends WaterBird{
     @Override
     String getSharedChar() {
         return this.sharedChar;
+    }
+
+    @Override
+    public String toString() {
+        return "GreatAuk{" +
+                "nameOfWater='" + this.nameOfWater + '\'' +
+                ", sharedChar='" + this.sharedChar + '\'' +
+                ", aviaryTypes=" + this.aviaryTypes +
+                ", birdType=" + this.birdType +
+                ", name='" + this.name + '\'' +
+                ", isExtinct=" + this.isExtinct +
+                ", wingNum=" + this.wingNum +
+                ", favFood=" + Arrays.toString(this.favFood) +
+                '}';
     }
 }

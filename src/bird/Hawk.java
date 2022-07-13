@@ -14,20 +14,18 @@ public class Hawk extends PreyBird{
 
     }
 
-
     @Override
     public String toString() {
         return "Hawk{" +
-                "salientChar='" + salientChar + '\'' +
-                ", aviaryTypes=" + aviaryTypes +
-                ", birdType=" + birdType +
-                ", name='" + name + '\'' +
-                ", isExtinct=" + isExtinct +
-                ", wingNum=" + wingNum +
-                ", favFood=" + Arrays.toString(favFood) +
+                "aviaryTypes=" + this.aviaryTypes +
+                ", birdType=" + this.birdType +
+                ", name='" + this.name + '\'' +
+                ", sharedChar='" + this.sharedChar + '\'' +
+                ", isExtinct=" + this.isExtinct +
+                ", wingNum=" + this.wingNum +
+                ", favFood=" + Arrays.toString(this.favFood) +
                 '}';
     }
-
 
     @Override
     String getSharedChar() {

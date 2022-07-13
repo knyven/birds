@@ -2,6 +2,8 @@ package bird;
 
 //Child class for AfricanJacana Bird that extends Water Bird type
 
+import java.util.Arrays;
+
 public class AfricanJacana extends WaterBird{
     public AfricanJacana(String name) {
         //name of specific bird
@@ -20,5 +22,20 @@ public class AfricanJacana extends WaterBird{
     @Override
     String getSharedChar() {
         return this.sharedChar;
+    }
+
+    @Override
+    public String toString() {
+        return "AfricanJacana{" +
+                "nameOfWater='" + nameOfWater + '\'' +
+                ", sharedChar='" + sharedChar + '\'' +
+                ", aviaryTypes=" + aviaryTypes +
+                ", birdType=" + birdType +
+                ", name='" + name + '\'' +
+                ", sharedChar='" + sharedChar + '\'' +
+                ", isExtinct=" + isExtinct +
+                ", wingNum=" + wingNum +
+                ", favFood=" + Arrays.toString(favFood) +
+                '}';
     }
 }

@@ -15,7 +15,6 @@ public class Cockatoo extends Parrot {
         //number of favorite word and favorite word variables
         this.numFavWords = numFavWords;
         this.favWord = favWord;
-        this.salientChar = "white cockatoo";
         this.isExtinct = false;
         this.wingNum = 2;
         this.favFood = new Food[]{Food.SEEDS, Food.INSECTS};
@@ -25,20 +24,18 @@ public class Cockatoo extends Parrot {
     String getSharedChar() {
         return this.sharedChar;
     }
-
     @Override
     public String toString() {
         return "Cockatoo{" +
-                "numFavWords=" + numFavWords +
-                ", favWord='" + favWord + '\'' +
-                ", salientChar='" + salientChar + '\'' +
-                ", aviaryTypes=" + aviaryTypes +
-                ", birdType=" + birdType +
-                ", name='" + name + '\'' +
-                ", isExtinct=" + isExtinct +
-                ", wingNum=" + wingNum +
-                ", favFood=" + Arrays.toString(favFood) +
+                "numFavWords=" + this.numFavWords +
+                ", favWord='" + this.favWord + '\'' +
+                ", sharedChar='" + this.sharedChar + '\'' +
+                ", aviaryTypes=" + this.aviaryTypes +
+                ", birdType=" + this.birdType +
+                ", name='" + this.name + '\'' +
+                ", isExtinct=" + this.isExtinct +
+                ", wingNum=" + this.wingNum +
+                ", favFood=" + Arrays.toString(this.favFood) +
                 '}';
     }
-
 }
