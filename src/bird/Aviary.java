@@ -3,7 +3,7 @@ package bird;
 import java.util.ArrayList;
 //====================================================================================================================//
 //                                                                                                                    //
-//      Aviary class to be used to store AbtractBird Child class objects                                              //
+//      Aviary class to be used to store AbstractBird Child class objects                                              //
 //      ------------------------------------------------                                                              //
 //                                                                                                                    //
 //       Ideal use case:                                                                                              //
