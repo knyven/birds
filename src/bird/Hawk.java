@@ -11,7 +11,7 @@ public class Hawk extends PreyBird{
         this.isExtinct = false;
         this.wingNum = 2;
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.INSECTS};
-        this.sharedChar = "hawks can see in color";
+
     }
 
 

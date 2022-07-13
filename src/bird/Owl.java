@@ -12,5 +12,8 @@ public class Owl extends AbstractBird {
         this.wingNum = 2;
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.OTHERBIRDS, Food.INSECTS};
     }
-
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 }

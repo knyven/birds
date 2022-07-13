@@ -5,7 +5,7 @@ abstract class Parrot extends AbstractBird {
     protected int numFavWords;
     protected String favWord;
     protected String salientChar;
-    private String sharedChar = "intelligent and mimic sounds and short, curved beak";
+    protected String sharedChar = "intelligent and mimic sounds and short, curved beak";
 
     public String getChar(){
         return "The specific traits are: " + salientChar + "\n" +

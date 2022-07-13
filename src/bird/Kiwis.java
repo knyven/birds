@@ -11,5 +11,8 @@ public class Kiwis extends FlightlessBirds{
         this.favFood = new Food[] {Food.VEGETATION, Food.INSECTS, Food.LARVAE};
     }
 
-
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 }

@@ -20,6 +20,9 @@ public class Pigeon extends AbstractBird{
         return "The specific traits are: " + salientChar;
     }
 
-
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 
 }

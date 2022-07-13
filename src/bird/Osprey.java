@@ -28,5 +28,8 @@ public class Osprey extends PreyBird{
                 ", favFood=" + Arrays.toString(favFood) +
                 '}';
     }
-
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 }

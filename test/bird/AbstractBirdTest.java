@@ -15,7 +15,7 @@ public class AbstractBirdTest {
     AbstractBird gParrot = new GreyParrot("grayparrot", 100, "hello");
     AbstractBird pigeon1 = new Pigeon("pigeon1");
     AbstractBird moas1 = new Moas("my moa");
-    AbstractBird african1 = new AfricanJacana("my jacana")
+    AbstractBird african1 = new AfricanJacana("my jacana");
 
     @Test//testing getName from all child classes using parent AbstractBird
     public void testGetName(){
@@ -30,7 +30,7 @@ public class AbstractBirdTest {
 
     @Test//testing get shared characteristics from all child classes using parent AbstractBird
     public void testGetSharedChar() {
-        //assertEquals("sharp hooked beaks and visible nostrils", hawk1.getSharedChar());
+        assertEquals("sharp hooked beaks and visible nostrils", hawk1.getSharedChar());
         assertEquals("These birds are often found near bodies of water, such as freshwater or the ocean.", african1.getSharedChar());
 
     }

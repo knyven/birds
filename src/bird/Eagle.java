@@ -29,5 +29,10 @@ public class Eagle extends PreyBird {
                 '}';
     }
 
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
+
 
 }

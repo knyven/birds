@@ -17,7 +17,10 @@ public class Parakeet extends Parrot{
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.INSECTS};
     }
 
-
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 
 
     @Override

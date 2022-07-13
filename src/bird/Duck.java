@@ -15,6 +15,11 @@ public class Duck extends WaterBird{
         this.nameOfWater = "freshwater ponds";
     }
 
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
+
 
 
 

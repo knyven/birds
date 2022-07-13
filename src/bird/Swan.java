@@ -12,5 +12,8 @@ public class Swan extends WaterBird {
     }
 
     @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 
 }

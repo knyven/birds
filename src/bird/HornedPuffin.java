@@ -11,5 +11,8 @@ public class HornedPuffin extends WaterBird{
         this.nameOfWater = "North Pacific coastal water";
     }
 
-
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 }

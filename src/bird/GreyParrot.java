@@ -33,5 +33,8 @@ public class GreyParrot extends Parrot{
                 '}';
     }
 
-
+    @Override
+    String getSharedChar() {
+        return this.sharedChar;
+    }
 }
