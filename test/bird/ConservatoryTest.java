@@ -66,8 +66,10 @@ public class ConservatoryTest {
         for (int i = 0; i < 90; i++) {
             conservatory1.rescueBird(hawk1);
         }
-        String expected = "SMALLMAMMALS = 90\n" +
-                "INSECTS = 90\n";
+        String expected = """
+                SMALLMAMMALS = 90
+                INSECTS = 90
+                """;
         assertEquals(expected, conservatory1.calculateFood().toString());
 
     }
@@ -79,8 +81,10 @@ public class ConservatoryTest {
         for (int i = 0; i < 60; i++) {
             conservatory1.rescueBird(hawk1);
         }
-        String expected = "SMALLMAMMALS = 60\n" +
-                "INSECTS = 60\n";
+        String expected = """
+                SMALLMAMMALS = 60
+                INSECTS = 60
+                """;
         assertEquals(expected, conservatory1.calculateFood().toString());
 
     }
@@ -104,15 +108,17 @@ public class ConservatoryTest {
             conservatory1.rescueBird(hawk1);
         }
 
-        StringBuilder expected = new StringBuilder(
-                "SEEDS = 36\n" +
-                "NUTS = 12\n" +
-                "SMALLMAMMALS = 36\n" +
-                "LARVAE = 12\n" +
-                "INSECTS = 60\n" +
-                "VEGETATION = 36\n");
+        String expected =
+                """
+                        SEEDS = 36
+                        NUTS = 12
+                        SMALLMAMMALS = 36
+                        LARVAE = 12
+                        INSECTS = 60
+                        VEGETATION = 36
+                        """;
 
-        assertEquals(expected, conservatory1.calculateFood());
+        assertEquals(expected, conservatory1.calculateFood().toString());
     }
 
     @Test // testing output for food calculation for one bird
@@ -120,8 +126,10 @@ public class ConservatoryTest {
         Conservatory conservatory1 = new Conservatory();
         Hawk hawk1 = new Hawk("Jenny");
         conservatory1.rescueBird(hawk1);
-        String expected = "SMALLMAMMALS = 1\n" +
-                "INSECTS = 1\n";
+        String expected = """
+                SMALLMAMMALS = 1
+                INSECTS = 1
+                """;
         assertEquals(expected, conservatory1.calculateFood().toString());
     }
 
@@ -132,8 +140,18 @@ public class ConservatoryTest {
         for (int i = 0; i < 1; i++) {
             conservatory1.rescueBird(hawk1);
         }
-        conservatory1.printMap();
+        String actual = """
+                Conservatory contains:\s
 
+                Index ======================== 0
+                Name of Aviary ============= Temp name
+                Type of Aviary ============= PREY
+                Location of Aviary========= Temp location
+
+                Name   : Type
+                Colby : HAWK""";
+        assertEquals(conservatory1.printMap(), actual);
+        //System.out.println(conservatory1.printMap());
     }
 
     @Test
@@ -173,7 +191,9 @@ public class ConservatoryTest {
                 Aviary Location: Temp location
                 Aviary Type: PREY
                 Bird: HAWK
-                Favorite food to eat: [SMALLMAMMALS, INSECTS]\n\n""";
+                Favorite food to eat: [SMALLMAMMALS, INSECTS]
+                
+                """;
 
         assertEquals(conservatory1.guestLookUpName("Jackson").toString(), actual);
     }
@@ -190,7 +210,9 @@ public class ConservatoryTest {
                 Aviary Location: Temp location
                 Aviary Type: PREY
                 Bird: HAWK
-                Favorite food to eat: [SMALLMAMMALS, INSECTS]\n\n""";
+                Favorite food to eat: [SMALLMAMMALS, INSECTS]
+                
+                """;
 
         assertEquals(conservatory1.guestLookUpType("Hawk").toString(), actual);
     }
@@ -205,8 +227,18 @@ public class ConservatoryTest {
 
         String actual = "Hawk Aviary";
         assertEquals(conservatory1.getAviaryList(0).getAviaryName(), actual);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddAviaryLocationWrongIndex() {
+        Conservatory conservatory1 = new Conservatory();
+        Hawk hawk1 = new Hawk("Lincoln");
+        conservatory1.rescueBird(hawk1);
+        conservatory1.addAviaryName("Hawk Aviary", 1);
+        String actual = "Index does not exist";
+        assertEquals(conservatory1.addAviaryName("Hawk Aviary", 1).toString(), actual);
 
     }
+
 
     @Test
     public void testAddAviaryNameLocation() {

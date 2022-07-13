@@ -11,7 +11,6 @@ public class Aviary implements AviaryInterface {
 
     public int birdNum;
     protected String aviaryName;                                // name of the aviary
-    private final int CAP = 5;                                // max size of birds in aviary
     protected AviaryTypes aviaryTypes;                          // type of aviary
     public ArrayList<AbstractBird> birdList;                 // list of birds stored in the aviary array
     protected String aviaryLocation;                            // location of the aviary
@@ -32,7 +31,7 @@ public class Aviary implements AviaryInterface {
 //===========================================MAIN METHODS=============================================================//
 
     //
-    //  addBird method takes a AbstractBird object and adds it to a aviary arraylist if
+    //  addBird method takes a AbstractBird object and adds it to an aviary arraylist if
     //  the current bird is compatible with the aviary, and it is not full
     //
     public Aviary addBird(AbstractBird object) {
@@ -61,10 +60,10 @@ public class Aviary implements AviaryInterface {
         birds.append(this.getAviaryName()).append("\n").
                 append("Type of Aviary ============= ").append(this.getAviaryType()).append("\n")
                 .append("Location of Aviary========= ").append(this.aviaryLocation).append("\n\n")
-                .append("Name   : Type").append("\n\n");
+                .append("Name   : Type").append("\n");
         for (int i = 0; i < this.birdNum; i++) {
             birds.append(this.birdList.get(i).getName()).append(" : ").
-                    append(this.birdList.get(i).getType()).append("\n");
+                    append(this.birdList.get(i).getType());
         }
         return birds.toString();
     }

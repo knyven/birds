@@ -66,7 +66,7 @@ public class Conservatory implements ConservatoryInterface {
         // Create new aviary using the makeAviary function
         // Store the aviary in the aviaryList using addAviary function
         else {
-            Aviary newAviary = (Aviary) this.makeAviary(object);
+            Aviary newAviary = this.makeAviary(object);
             newAviary.addBird(object);
             this.addAviary(newAviary);
             return this;
@@ -90,20 +90,20 @@ public class Conservatory implements ConservatoryInterface {
     //  addAviaryName adds aviary name to conservatory object aviaryList based on aviaryIndex
     //
     public Conservatory addAviaryName(String newName, int aviaryIndex) {
-        if (this.aviaryList.get(aviaryIndex) == null) {
+        if(this.getAviaryCount() <= aviaryIndex){
+            throw new IllegalArgumentException("Index does not exist");
+        } else {
+            aviaryList.get(aviaryIndex).setAviaryName(newName);
             return this;
         }
-        aviaryList.get(aviaryIndex).setAviaryName(newName);
-        return this;
     }
 
     //
     //  addAviaryName adds aviary name and location to conservatory object aviaryList based on aviaryIndex
     //
     public Conservatory addAviaryLocation(String newName, String aviaryLocation, int aviaryIndex) {
-
-        if (this.aviaryList.get(aviaryIndex) == null) {
-            return this;
+        if(this.getAviaryCount() <= aviaryIndex){
+            throw new IllegalArgumentException("Index does not exist");
         } else {
             aviaryList.get(aviaryIndex).setAviaryLocation(aviaryLocation);
             aviaryList.get(aviaryIndex).setAviaryName(newName);
@@ -137,13 +137,17 @@ public class Conservatory implements ConservatoryInterface {
     //
     // Prints map of all the birds in each aviary using the printAviary from aviary
     //
-    public void printMap() {
+    public String printMap() {
         String map = "Conservatory contains: ";
         for (int i = 0; i < this.aviaryList.size(); i++) {
             // loop over individual aviary list containing up to 5 bird objects
-            System.out.println("Index ======================== " + i);
-            System.out.println(this.aviaryList.get(i).printAviary());
+            map = map + "\n\n" + "Index ======================== " + i + "\n"
+                    + this.aviaryList.get(i).printAviary();
+
+            //System.out.println("Index ======================== " + i);
+            //System.out.println(this.aviaryList.get(i).printAviary());
         }
+        return map;
     }
 
     //
