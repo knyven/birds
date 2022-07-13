@@ -29,5 +29,7 @@ abstract class Parrot extends AbstractBird {
     abstract String getSharedChar();
 
 
+
+
 }
 

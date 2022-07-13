@@ -11,7 +11,6 @@ public class GreyParrot extends Parrot{
         this.name = name;
         this.numFavWords = numFavWords;
         this.favWord = favWord;
-        this.salientChar = "grey parrot";
         this.isExtinct = false;
         this.wingNum = 2;
         this.favFood = new Food[]{Food.SEEDS, Food.INSECTS};

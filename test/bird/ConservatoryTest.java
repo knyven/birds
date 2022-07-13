@@ -29,10 +29,10 @@ public class ConservatoryTest {
         Swan swanny = new Swan("Swanny");
 
         cons1.rescueBird(swanny);
-        //System.out.println(cons1.guestLookUp("HAWK"));
-        cons1.addAviaryName("First aviary everrrr", 1);
+        System.out.println(cons1.guestLookUpType("HAWK"));
+        //cons1.addAviaryName("First aviary everrrr", 1);
 
-        cons1.addAviaryLocation("Hawk aviary", "Far side of the conservatory", 2);
+        //cons1.addAviaryLocation("Hawk aviary", "Far side of the conservatory", 2);
 
         //cons1.printMap();
         //System.out.println(cons1.calculateFood());

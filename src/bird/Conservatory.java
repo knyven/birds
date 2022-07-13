@@ -48,6 +48,8 @@ public class Conservatory implements ConservatoryInterface{
         // if there is a compatible aviary, and it is not full put the bird object in there
         //
         for(Aviary aviary : this.aviaryList) {
+            
+
             if (aviary.isCompatible(object) && !aviary.isFull()) {
                 aviary.addBird(object);
                 return this;
