@@ -3,17 +3,17 @@ package bird;
 import java.util.*;
 import java.util.stream.Collectors;
 
-//===================================================================================================================//
-//                                                                                                                   //
-//      Conservatory class to be used with Aviary class                                                              //
-//      ------------------------------------------------                                                             //
-//                                                                                                                   //
-//===================================================================================================================//
+//====================================================================================================================//
+//                                                                                                                    //
+//      Conservatory class to be used to store Aviary class objects                                                   //
+//      ------------------------------------------------                                                              //
+//                                                                                                                    //
+//====================================================================================================================//
 public class Conservatory implements ConservatoryInterface {
     private int aviaryCount;   // num of aviaries in the conservatory
     private ArrayList<Aviary> aviaryList;  // list of aviary objects in the conservatory
 
-    //====================================================================================================================//
+//====================================================================================================================//
 //=============================================CONSTRUCTOR============================================================//
     public Conservatory() {
         this.aviaryCount = 0;
@@ -122,13 +122,14 @@ public class Conservatory implements ConservatoryInterface {
         for (Aviary currAviary : this.aviaryList) {
             for (int i = 0; i < currAviary.getSize(); i++) {
                 AbstractBird currBird = currAviary.birdList.get(i);
-                food.add(Arrays.toString(currBird.getFavFood()));
+                for(int j = 0; j < currBird.getFavFood().length; j++){
+                    food.add(String.valueOf(currBird.getFavFood()[j]));
+                }
             }
         }
-        //TODO we can flatten the list here and get the output to be each individual food item
         Map<String, Long> counts = food.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
         for (Map.Entry<String, Long> entry : counts.entrySet()) {
-            foodList.append(entry.getKey()).append(" = ").append(entry.getValue());
+            foodList.append(entry.getKey()).append(" = ").append(entry.getValue()).append("\n");
         }
         return foodList;
     }
@@ -140,7 +141,7 @@ public class Conservatory implements ConservatoryInterface {
         String map = "Conservatory contains: ";
         for (int i = 0; i < this.aviaryList.size(); i++) {
             // loop over individual aviary list containing up to 5 bird objects
-            System.out.println("Index ============ " + i);
+            System.out.println("Index ======================== " + i);
             System.out.println(this.aviaryList.get(i).printAviary());
         }
     }
@@ -175,11 +176,11 @@ public class Conservatory implements ConservatoryInterface {
         String sign = "";
         for (int i = 0; i < someAviary.getSize(); ++i) {
             AbstractBird bird = someAviary.birdList.get(i);
-            sign += "Bird " + i
-                    + "Name : " + bird.getName()
+            sign += "Bird : " + i
+                    + "  Name : " + bird.getName()
                     + ", Bird type: " + bird.getType()
                     + ", Characteristics: " + bird.getSharedChar()
-                    + ",Number of Wings:" + bird.getWingNum()
+                    + ", Number of Wings:" + bird.getWingNum()
                     + ", Favorite food to eat: " + Arrays.toString(bird.getFavFood());
         }
         return sign;
@@ -234,8 +235,6 @@ public class Conservatory implements ConservatoryInterface {
             return returnLocation;
         }
     }
-//====================================================================================================================//
-//===========================================GETTERS==================================================================//
 
     public boolean conservatoryFull() {
         return this.aviaryCount == 20;
@@ -244,12 +243,16 @@ public class Conservatory implements ConservatoryInterface {
     public boolean conservatoryEmpty() {
         return this.aviaryCount == 0;
     }
+//====================================================================================================================//
+//===========================================GETTERS==================================================================//
+
 
     public int getAviaryCount() {
         return this.aviaryCount;
     }
 
-    public ArrayList<Aviary> getAviaryList() {
-        return this.aviaryList;
+
+    public Aviary getAviaryList(int index) {
+        return this.aviaryList.get(index);
     }
 }
