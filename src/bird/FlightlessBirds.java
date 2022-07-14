@@ -6,19 +6,12 @@ package bird;
 //
 // This object will be used to extend several child classes. AKA all flightlessBirds.
 //====================================================================================================================//
-abstract class FlightlessBirds extends AbstractBird{
-    protected String sharedChar = "Lives on the ground and has underdeveloped wings or no wings";
+public class FlightlessBirds extends AbstractBird{
+    protected static String sharedChar = "Lives on the ground and has underdeveloped wings or no wings";
 
-    public String getChar(){
-        return sharedChar;
-    }
 
     @Override
-    public Food[] getFavFood() {
-
-        return this.favFood;
+    public String getSharedChar() {
+        return sharedChar;
     }
-
-    abstract String getSharedChar();
-
 }

@@ -21,13 +21,9 @@ public class Pigeon extends AbstractBird{
         this.favFood = new Food[] {Food.SEEDS, Food.INSECTS};
     }
 
-    public String getChar(){
-        return "The specific traits are: " + salientChar;
-    }
 
     @Override
-    String getSharedChar() {
-        return this.sharedChar;
+    public String getSharedChar() {
+        return sharedChar;
     }
-
 }

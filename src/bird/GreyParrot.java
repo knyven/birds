@@ -11,7 +11,6 @@ import java.util.Arrays;
 //====================================================================================================================//
 public class GreyParrot extends Parrot{
 
-
     public GreyParrot(String name, int numFavWords, String favWord) {
         this.birdType = BirdType.GREYPARROT;
         this.aviaryTypes = AviaryTypes.OTHER;
@@ -21,11 +20,6 @@ public class GreyParrot extends Parrot{
         this.isExtinct = false;
         this.wingNum = 2;
         this.favFood = new Food[]{Food.SEEDS, Food.INSECTS};
-    }
-
-    @Override
-    String getSharedChar() {
-        return this.sharedChar;
     }
 
 }

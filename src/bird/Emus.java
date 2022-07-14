@@ -20,9 +20,5 @@ public class Emus extends FlightlessBirds{
         this.favFood = new Food[]{Food.INSECTS, Food.VEGETATION};
     }
 
-    @Override
-    String getSharedChar() {
-        return this.sharedChar;
-    }
 
 }

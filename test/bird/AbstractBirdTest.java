@@ -57,6 +57,7 @@ public class AbstractBirdTest {
         assertEquals(2, emu1.getWingNum());
         assertEquals(2, pigeon1.getWingNum());
         assertEquals(2, owl1.getWingNum());
+
     }
 
 
@@ -68,6 +69,8 @@ public class AbstractBirdTest {
         assertEquals(Arrays.toString(new String[]{String.valueOf(Food.INSECTS), String.valueOf(Food.VEGETATION)}), Arrays.toString(emu1.getFavFood()));
         assertEquals(Arrays.toString(new String[]{String.valueOf(Food.SMALLMAMMALS), String.valueOf(Food.INSECTS)}), Arrays.toString(hawk1.getFavFood()));
         assertEquals(Arrays.toString(new String[]{String.valueOf(Food.SEEDS), String.valueOf(Food.INSECTS)}), Arrays.toString(pigeon1.getFavFood()));
+        assertEquals(Arrays.toString(new String[]{String.valueOf(Food.SEEDS), String.valueOf(Food.INSECTS)}), Arrays.toString(gParrot.getFavFood()));
+
 
     }
 

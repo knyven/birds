@@ -14,13 +14,9 @@ abstract class WaterBird extends AbstractBird{
         return this.nameOfWater;
     }
 
+
     @Override
-    public Food[] getFavFood() {
-
-        return this.favFood;
+    public String getSharedChar() {
+        return sharedChar;
     }
-
-    abstract String getSharedChar();
-
-
 }

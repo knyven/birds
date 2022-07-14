@@ -21,11 +21,4 @@ public class Eagle extends PreyBird {
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.INSECTS};
     }
 
-
-    @Override
-    String getSharedChar() {
-        return this.sharedChar;
-    }
-
-
 }

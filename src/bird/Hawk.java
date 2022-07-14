@@ -21,8 +21,4 @@ public class Hawk extends PreyBird{
 
     }
 
-    @Override
-    String getSharedChar() {
-        return this.sharedChar;
-    }
 }

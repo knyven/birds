@@ -8,16 +8,12 @@ package bird;
 //====================================================================================================================//
 abstract class PreyBird extends AbstractBird{
 
-
-    protected String sharedChar = "sharp hooked beaks and visible nostrils";
-
+    protected static String sharedChar = "sharp hooked beaks and visible nostrils";
 
     @Override
-    public Food[] getFavFood() {
-
-        return this.favFood;
+    public String getSharedChar() {
+        return sharedChar;
     }
 
-    abstract String getSharedChar();
 
 }

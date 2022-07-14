@@ -20,8 +20,5 @@ public class Moas extends FlightlessBirds{
         this.favFood = new Food[] {Food.VEGETATION, Food.FRUIT, Food.SEEDS};
     }
 
-    @Override
-    String getSharedChar() {
-        return this.sharedChar;
-    }
+
 }

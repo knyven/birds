@@ -20,9 +20,5 @@ public class Osprey extends PreyBird{
         this.wingNum = 2;
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.INSECTS};
     }
-    @Override
-    String getSharedChar() {
-        return this.sharedChar;
-    }
 
 }

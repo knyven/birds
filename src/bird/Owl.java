@@ -20,9 +20,9 @@ public class Owl extends AbstractBird {
         this.favFood = new Food[] {Food.SMALLMAMMALS, Food.OTHERBIRDS, Food.INSECTS};
     }
 
-    @Override
-    String getSharedChar() {
-        return this.sharedChar;
-    }
 
+    @Override
+    public String getSharedChar() {
+        return sharedChar;
+    }
 }
