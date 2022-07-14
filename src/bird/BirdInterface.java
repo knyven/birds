@@ -9,4 +9,8 @@ public interface BirdInterface {
     boolean isExtinct();
     //returns integer value of number of wings
     int getWingNum();
+
+    Food[] getFavFood();
+
+    String getSharedChar();
 }
